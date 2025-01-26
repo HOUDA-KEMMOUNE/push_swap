@@ -26,13 +26,12 @@ int	check_if_nbr(char **av, int ac)
 		while (av[i][j])
 		{
 			if (av[i][j] >= '0' && av[i][j] <= '9')
-				break ;
+				j++;
 			else
 			{
 				printf("------->  Error\n");
 				return (1);
 			}
-			j++;
 		}
 		j = 0;
 		i++;

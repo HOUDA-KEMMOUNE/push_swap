@@ -110,6 +110,7 @@ int	*atoi_av(int ac, char *av[])
 			printf("%d (sizeof --> %zu)\t", arr[i], sizeof(arr[i]));
 			i++;
 		}
+		printf("\n");
 		free_split(new_av);
 		return (arr);
 	}

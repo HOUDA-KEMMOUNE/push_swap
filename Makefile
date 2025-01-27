@@ -20,7 +20,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c
+SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c bubble_sort.c
 
 OBJ = $(SRC:.c=.o)
 

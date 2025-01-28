@@ -18,7 +18,7 @@ EXE = a.out
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
 SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c bubble_sort.c
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $(OBJ)
 
 $(EXE): $(SRC)
-	$(CC) *.c -g3 $(CFLAGS)
+	$(CC) *.c $(CFLAGS)
 
 clean:
 	rm -rf *.o

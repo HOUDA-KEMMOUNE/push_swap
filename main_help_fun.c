@@ -21,23 +21,28 @@ int	check_if_nbr(char **av, int ac)
 	i = 0;
 	j = 0;
 	i++;
-	while (i < ac)
+	if (ac > 1)
 	{
-		while (av[i][j])
+		while (i < ac)
 		{
-			if (av[i][j] >= '0' && av[i][j] <= '9')
-				j++;
-			else
+			while (av[i][j])
 			{
-				printf("------->  Error\n");
-				return (1);
+				if (av[i][j] >= '0' && av[i][j] <= '9')
+					j++;
+				else
+				{
+					printf("------->  Error\n");
+					return (1);
+				}
 			}
+			j = 0;
+			i++;
 		}
-		j = 0;
-		i++;
+		printf("------->  Right\n");
+		return (0);
 	}
-	printf("------->  Right\n");
-	return (0);
+	else
+		return (1);
 }
 /*-------------join_split_arg----------------*/
 
@@ -52,7 +57,11 @@ char	**join_split_arg(int ac, char **av)
 	is_nbr = check_if_nbr(av, ac);
 	i = 1;
 	ac++;
-	if (is_nbr == 0)
+	if (is_nbr == 1)
+	{
+		return (NULL);
+	}
+	else
 	{
 		join = ft_strdup("");
 		while (av[i])
@@ -66,8 +75,6 @@ char	**join_split_arg(int ac, char **av)
 		free(join);
 		return (new_av);
 	}
-	else
-		return (NULL);
 }
 /*-------------free_split----------------*/
 
@@ -106,10 +113,10 @@ int	*atoi_av(int ac, char *av[])
 		while (new_av[i] && i < ac)
 		{
 			arr[i] = ft_atoi(new_av[i]);
-			printf("%d (sizeof --> %zu)\t", arr[i], sizeof(arr[i]));
+			//printf("%d (sizeof --> %zu)\t", arr[i], sizeof(arr[i]));
 			i++;
 		}
-		printf("\n");
+		//printf("\n");
 		free_split(new_av);
 		return (arr);
 	}

@@ -15,8 +15,19 @@
 int	main(int ac, char *av[])
 {
 	int		*arr;
+	// int		*sorted_arr;
+	// int		i;
 
-	arr = atoi_av(ac, av);
+	 arr = atoi_av(ac, av);
+	// sorted_arr = bubble_sort(arr, ac);
+	// i = 0;
+	// while (i < ac--)
+	// {
+	// 	printf("%d\t", sorted_arr[i]);
+	// 	i++;
+	// }
+	// printf("\n");
+	// free (sorted_arr);
 	if (arr != NULL)
 	{
 		free (arr);
@@ -24,5 +35,4 @@ int	main(int ac, char *av[])
 	}
 	else
 		return (1);
-	
 }

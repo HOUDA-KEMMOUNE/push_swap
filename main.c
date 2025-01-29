@@ -18,8 +18,7 @@ int	main(int ac, char *av[])
 	int		*sorted_arr;
 	int		i;
 
-	if (check_if_nX2(av, ac) == 0)
-		printf("---> Right\n");
+	check_if_nX2(av, ac);
 	arr = atoi_av(ac, av);
 	sorted_arr = bubble_sort(arr, ac - 1);
 	i = 0;

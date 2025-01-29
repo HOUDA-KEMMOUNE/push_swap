@@ -16,13 +16,9 @@ int check_if_nX2(char **av, int ac)
 {
 	int i;
 	int j;
-	// int k;
-	// int l;
 
 	i = 1;
 	j = 1;
-	// k = 0;
-	// l = 0;
 	if (ac <= 1)
 		exit(1);
 	else
@@ -37,16 +33,10 @@ int check_if_nX2(char **av, int ac)
 					printf("-->Error:/\n");
 					exit(1);
 				}
-				// k = 0;
-				// l = 0;
 				j++;
 			}
-			// j = 1;
-			// k = 0;
-			// l = 0;
 			i++;
 		}
 	}
-	printf("-->Right<3\n");
 	return (0);
 }

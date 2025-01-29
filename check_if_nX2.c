@@ -1,42 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_if_nX2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 03:51:24 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/25 03:51:27 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/29 08:43:29 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/29 08:43:31 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char *av[])
+int check_if_nX2(char **av, int ac)
 {
-	int		*arr;
-	int		*sorted_arr;
-	int		i;
+	int i;
+	int j;
+	// int k;
+	// int l;
 
-	if (check_if_nX2(av, ac) == 0)
-		printf("---> Right\n");
-	arr = atoi_av(ac, av);
-	sorted_arr = bubble_sort(arr, ac - 1);
-	i = 0;
-	if (sorted_arr == NULL)
-		return (1);
-	if (arr != NULL)
+	i = 1;
+	j = 1;
+	// k = 0;
+	// l = 0;
+	if (ac <= 1)
+		exit(1);
+	else
 	{
-		while (i < ac - 1)
+		while (i < ac)
 		{
-			printf("%d\t", sorted_arr[i]);
+			j = i + 1;
+			while (j < ac)
+			{
+				if (ft_strcmp(av[i], av[j]) == 0)
+				{
+					printf("-->Error:/\n");
+					exit(1);
+				}
+				// k = 0;
+				// l = 0;
+				j++;
+			}
+			// j = 1;
+			// k = 0;
+			// l = 0;
 			i++;
 		}
-		printf("\n");
-		free(arr);
-		return (0);
 	}
-	else
-		return (1);
-	printf("\n");
+	printf("-->Right<3\n");
+	return (0);
 }

@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 03:51:24 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/25 03:51:27 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/29 09:31:40 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/29 09:31:43 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char *av[])
+/*-------------------------ft_strncmp---------------------*/
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int		*arr;
-	int		*sorted_arr;
-	int		i;
+	size_t			i;
+	unsigned char	*ptr_s1;
+	unsigned char	*ptr_s2;
 
-	if (check_if_nX2(av, ac) == 0)
-		printf("---> Right\n");
-	arr = atoi_av(ac, av);
-	sorted_arr = bubble_sort(arr, ac - 1);
-	i = 0;
-	if (sorted_arr == NULL)
-		return (1);
-	if (arr != NULL)
-	{
-		while (i < ac - 1)
-		{
-			printf("%d\t", sorted_arr[i]);
-			i++;
-		}
-		printf("\n");
-		free(arr);
+	if (!s1 && !s2)
 		return (0);
+	ptr_s1 = (unsigned char *)s1;
+	ptr_s2 = (unsigned char *)s2;
+	i = 0;
+	while ((s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return (ptr_s1[i] - ptr_s2[i]);
+		i++;
 	}
-	else
-		return (1);
-	printf("\n");
+	return (0);
 }
+/*---------------------------end-----------------------*/

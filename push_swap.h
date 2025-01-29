@@ -37,5 +37,7 @@ char		**join_split_arg(int ac, char **av);
 void		free_split(char **str_str);
 int			*atoi_av(int ac, char *av[]);
 int			*bubble_sort(int *arr, int ac);
+int			check_if_nX2(char **av, int ac);
+int	ft_strcmp(const char *s1, const char *s2);
 
 #endif

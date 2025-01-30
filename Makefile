@@ -20,7 +20,9 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
-SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c bubble_sort.c check_if_nX2.c utils4.c
+SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c bubble_sort.c check_if_dup.c utils4.c actions.c \
+	stack_a.c ft_print_node.c
+
 
 OBJ = $(SRC:.c=.o)
 

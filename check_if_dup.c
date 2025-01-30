@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   check_if_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 01:25:16 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/27 01:25:18 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/30 13:44:13 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/30 13:44:17 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(int *a, int *b)
+int check_if_dup(char **av, int ac)
 {
-	int	tmp;
+	int i;
+	int j;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-int	*bubble_sort(int *arr, int ac)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (!arr && ac <= 1)
+	i = 1;
+	j = 1;
+	if (ac <= 1)
 		exit(1);
-	while (i < ac - 1)
+	else
 	{
-		while (j < ac - i - 1)
+		while (i < ac)
 		{
-			if (arr[j] > arr[j + 1])
-				ft_swap(&arr[j], &arr[j + 1]);
-			j++;
+			j = i + 1;
+			while (j < ac)
+			{
+				if (ft_strcmp(av[i], av[j]) == 0)
+				{
+					printf("-->Error:/\n");
+					exit(1);
+				}
+				j++;
+			}
+			i++;
 		}
-		j = 0;
-		i++;
 	}
-	return (arr);
+	return (0);
 }

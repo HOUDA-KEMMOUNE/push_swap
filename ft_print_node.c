@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   ft_print_node.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 01:25:16 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/27 01:25:18 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/30 13:41:55 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/30 13:41:59 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(int *a, int *b)
+void    ft_print_node(t_stack *head)
 {
-	int	tmp;
+	t_stack	*ptr;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-int	*bubble_sort(int *arr, int ac)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (!arr && ac <= 1)
-		exit(1);
-	while (i < ac - 1)
+	ptr = head;
+	while (ptr != NULL)
 	{
-		while (j < ac - i - 1)
-		{
-			if (arr[j] > arr[j + 1])
-				ft_swap(&arr[j], &arr[j + 1]);
-			j++;
-		}
-		j = 0;
-		i++;
+		printf("%d --> ", ptr->data);
+		ptr = ptr->next;
 	}
-	return (arr);
+	printf("NULL\n");
 }

@@ -16,13 +16,14 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+// # include "ft_printf.h"
 
 typedef struct s_stack
 {
 	int				data;
-	int				index;
+	//int				index;
 	struct s_stack	*next;
-}					t_node;
+}					t_stack;
 
 int			ft_atoi(const char *str);
 char		**ft_split(const char *str, char c);
@@ -37,7 +38,8 @@ char		**join_split_arg(int ac, char **av);
 void		free_split(char **str_str);
 int			*atoi_av(int ac, char *av[]);
 int			*bubble_sort(int *arr, int ac);
-int			check_if_nX2(char **av, int ac);
-int	ft_strcmp(const char *s1, const char *s2);
+int			check_if_dup(char **av, int ac);
+int			ft_strcmp(const char *s1, const char *s2);
+void		ft_swap(int *a, int *b);
 
 #endif

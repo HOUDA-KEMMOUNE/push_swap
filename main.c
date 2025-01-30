@@ -16,26 +16,11 @@ int	main(int ac, char *av[])
 {
 	int		*arr;
 	int		*sorted_arr;
-	int		i;
 
-	check_if_nX2(av, ac);
+	check_if_dup(av, ac);
 	arr = atoi_av(ac, av);
 	sorted_arr = bubble_sort(arr, ac - 1);
-	i = 0;
 	if (sorted_arr == NULL)
-		return (1);
-	if (arr != NULL)
-	{
-		while (i < ac - 1)
-		{
-			printf("%d\t", sorted_arr[i]);
-			i++;
-		}
-		printf("\n");
-		free(arr);
-		return (0);
-	}
-	else
 		return (1);
 	printf("\n");
 }

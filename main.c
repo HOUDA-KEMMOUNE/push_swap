@@ -22,5 +22,4 @@ int	main(int ac, char *av[])
 	sorted_arr = bubble_sort(arr, ac - 1);
 	if (sorted_arr == NULL)
 		return (1);
-	printf("\n");
 }

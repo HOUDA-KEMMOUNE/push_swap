@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	main(int ac, char *av[])
+void	check_errors(int ac, char *av[])
 {
 	int		*arr;
 	int		*sorted_arr;
@@ -21,5 +21,9 @@ int	main(int ac, char *av[])
 	arr = atoi_av(ac, av);
 	sorted_arr = bubble_sort(arr, ac - 1);
 	if (sorted_arr == NULL)
-		return (1);
+		exit(1);
+}
+int	main(int ac, char *av[])
+{
+	check_errors(ac, av);
 }

@@ -41,5 +41,6 @@ int			*bubble_sort(int *arr, int ac);
 int			check_if_dup(char **av, int ac);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_swap(int *a, int *b);
+void		check_errors(int ac, char *av[]);
 
 #endif

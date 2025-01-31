@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_if_nX2.c                                     :+:      :+:    :+:   */
+/*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 08:43:29 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/29 08:43:31 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/31 02:58:17 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/31 02:58:20 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_if_nX2(char **av, int ac)
+void    sa(t_stack **head_a)
 {
-	int i;
-	int j;
+    t_stack *ptr;
 
-	i = 1;
-	j = 1;
-	if (ac <= 1)
-		exit(1);
-	else
-	{
-		while (i < ac)
-		{
-			j = i + 1;
-			while (j < ac)
-			{
-				if (ft_strcmp(av[i], av[j]) == 0)
-				{
-					printf("-->Error:/\n");
-					exit(1);
-				}
-				j++;
-			}
-			i++;
-		}
-	}
-	return (0);
+    if (!head_a)
+        return ;
+    ptr = *head_a;
+    ft_swap(&(ptr->data), &(ptr->next->data));
+}
+
+void    sb(t_stack **head_b)
+{
+    t_stack *ptr;
+
+    if (!head_b)
+        return ;
+    ptr = *head_b;
+    ft_swap(&(ptr->data), &(ptr->next->data));
+}
+
+void    ss(t_stack **head_a, t_stack **head_b)
+{
+    sa(&head_a);
+    sb(&head_b);
 }

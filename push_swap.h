@@ -46,5 +46,9 @@ void		ft_print_node(t_stack *head);
 void		add_node(t_stack *head, int new_data);
 void		ft_lstclear(t_stack **lst);
 void		stack_a(int ac, char *av[]);
+//-----------------actions-------------
+void		sa(t_stack **head);
+void		stack_b(int ac, char *av[], t_stack *head_a);
+void		ss(t_stack **head_a, t_stack **head_b)
 
 #endif

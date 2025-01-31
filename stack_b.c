@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   stack_b.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 10:44:12 by hkemmoun          #+#    #+#             */
-/*   Updated: 2025/01/29 10:44:14 by hkemmoun         ###   ########.fr       */
+/*   Created: 2025/01/31 02:48:05 by hkemmoun          #+#    #+#             */
+/*   Updated: 2025/01/31 02:48:08 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void    sa(t_stack **ptr_head)
-// {
-//     int first_content;
-//     int second_content;
+void    stack_b(int ac, char *av[], t_stack *head_a)
+{
+    t_stack	*head_b;
+	int		*arr;
+	int		i;
 
-//     first_content = *ptr_head->data;
-//     second_content = *ptr_head->next->data;
-//     // ft_swap(int *a, int *b)
-// }
+	i = 1;
+	arr = atoi_av(ac, av);
+	head_b = malloc(sizeof(t_stack));
+	pb(head_a, &head_b);
+	ac--;
+	while (i < ac)
+	{
+		add_node(head_b, arr[i]);
+		i++;
+	}
+
+	ft_print_node(head_b);
+    sa(&head_b);
+    ft_print_node(head_b);
+
+	ft_lstclear(&head_b);
+	free(head_b);
+	free(arr);
+}

@@ -22,18 +22,5 @@ void    stack_b(int ac, char *av[], t_stack *head_a)
 	arr = atoi_av(ac, av);
 	head_b = malloc(sizeof(t_stack));
 	pb(head_a, &head_b);
-	ac--;
-	while (i < ac)
-	{
-		add_node(head_b, arr[i]);
-		i++;
-	}
-
-	ft_print_node(head_b);
-    sa(&head_b);
-    ft_print_node(head_b);
-
-	ft_lstclear(&head_b);
-	free(head_b);
-	free(arr);
+	// free(head_b);
 }

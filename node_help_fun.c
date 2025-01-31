@@ -41,7 +41,7 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 }
 
 /*-------ft_lstnew---------------*/
-t_stack	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content)
 {
 	t_stack	*ptr;
 
@@ -52,4 +52,5 @@ t_stack	*ft_lstnew(void *content)
 	ptr->next = NULL;
 	return (ptr);
 }
+
 /*------------end------------------*/

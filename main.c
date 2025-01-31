@@ -28,11 +28,10 @@ void	check_errors(int ac, char *av[])
 int	main(int ac, char *av[])
 {
 	t_stack	*head_a;
-	t_stack	*head_b;
 
 	check_errors(ac, av);
 	// stack_a(ac, av);
 	head_a = ft_stack_a(ac, av);
-	head_b = ft_stack_b(head_a);
-	ft_print_node(head_b);
+	ft_stack_b(head_a);
+	// ft_print_node(head_b);
 }

@@ -37,7 +37,7 @@ int	check_if_nbr(char **av, int ac)
 		j = 0;
 		i++;
 	}
-	printf("------->  Right\n");
+	//printf("------->  Right\n");
 	return (0);
 }
 /*-------------join_split_arg----------------*/

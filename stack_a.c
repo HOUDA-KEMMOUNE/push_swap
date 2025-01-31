@@ -43,7 +43,27 @@ void    add_node(t_stack *head, int new_data)
         ptr = ptr->next;
     }
     ptr->next = tail;
-    // free(tail);
-    // ptr = NULL;
-    // tail = NULL;
+}
+
+void    stack_a(int ac, char *av[])
+{
+    t_stack	*head;
+	int		*arr;
+	int		i;
+
+	i = 1;
+	arr = atoi_av(ac, av);
+	head = malloc(sizeof(t_stack));
+	head->data = arr[0];
+	head->next = NULL;
+	ac--;
+	while (i < ac)
+	{
+		add_node(head, arr[i]);
+		i++;
+	}
+	ft_print_node(head);
+	ft_lstclear(&head);
+	free(head);
+	free(arr);
 }

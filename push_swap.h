@@ -45,5 +45,6 @@ void		check_errors(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
 void		add_node(t_stack *head, int new_data);
 void		ft_lstclear(t_stack **lst);
+void		stack_a(int ac, char *av[]);
 
 #endif

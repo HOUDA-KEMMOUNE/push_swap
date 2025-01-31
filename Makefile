@@ -18,11 +18,10 @@ EXE = a.out
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 
-SRC = main.c ft_split.c utils2.c utils3.c main_help_fun.c bubble_sort.c check_if_dup.c utils4.c actions.c \
-	stack_a.c ft_print_node.c swaps.c  stack_helper.c stack_b.c
-
+SRC = bubble_sort.c ft_split.c main.c stack_b.c swaps.c utils3.c check_if_dup.c ft_print_node.c \
+	main_help_fun.c pushes.c stack_a.c stack_helper.c utils2.c utils4.c node_help_fun.c
 
 OBJ = $(SRC:.c=.o)
 

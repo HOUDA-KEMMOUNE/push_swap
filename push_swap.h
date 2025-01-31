@@ -43,12 +43,17 @@ int			ft_strcmp(const char *s1, const char *s2);
 void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
+void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		add_node(t_stack *head, int new_data);
+t_stack		*ft_lstnew(void *content);
 void		ft_lstclear(t_stack **lst);
-void		stack_a(int ac, char *av[]);
+t_stack		*ft_stack_a(int ac, char *av[]);
+t_stack		*ft_stack_b(t_stack *head_a);
 //-----------------actions-------------
 void		sa(t_stack **head);
-void		stack_b(int ac, char *av[], t_stack *head_a);
-void		ss(t_stack **head_a, t_stack **head_b)
+// void		sb(t_stack **head_b);
+// void		ss(t_stack **head_a, t_stack **head_b)
+void		pb(t_stack *head_a, t_stack **head_b);
+
 
 #endif

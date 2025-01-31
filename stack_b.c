@@ -22,5 +22,4 @@ void    stack_b(int ac, char *av[], t_stack *head_a)
 	arr = atoi_av(ac, av);
 	head_b = malloc(sizeof(t_stack));
 	pb(head_a, &head_b);
-	// free(head_b);
 }

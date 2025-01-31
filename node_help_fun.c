@@ -52,5 +52,4 @@ t_stack	*ft_lstnew(void *content)
 	ptr->next = NULL;
 	return (ptr);
 }
-
 /*------------end------------------*/

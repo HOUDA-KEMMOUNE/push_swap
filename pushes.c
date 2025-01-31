@@ -12,22 +12,19 @@
 
 #include "push_swap.h"
 
-void    pb(t_stack *head_a, t_stack **head_b)
+void    pb(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*ptr_a;
 	t_stack	*new_b;
 
-	if (!head_a)
+	if (!(*head_a))
 		return ;
-	ptr_a = head_a;
-
+	ptr_a = *head_a;
 	new_b = ft_lstnew(ptr_a->data);
 	ft_lstadd_front(head_b, new_b);
-	// ptr_b->data = ptr_a->data;
-	// ptr_a = head_a->next;
-	head_a = ptr_a->next;
-	free(ptr_a);
-	ptr_a = NULL;
-	// head_a = NULL;
-	// head_a = ptr_a;
+	// *head_a = ptr_a->next;
+	ptr_a = (*head_a)->next;
+	free(head_a);
+	*head_a = ptr_a;
+	// ptr_a = NULL;
 }

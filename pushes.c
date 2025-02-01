@@ -28,14 +28,14 @@ void    pb(t_stack **head_a, t_stack **head_b)
 
 void    pa(t_stack **head_a, t_stack **head_b)
 {
-	t_stack	*ptr_a;
-	t_stack	*new_b;
+	t_stack	*ptr_b;
+	t_stack	*new_a;
 
 	if (!(*head_b))
 		return ;
-	ptr_a = *head_a;
-	new_b = ft_lstnew((*head_a)->data);
-	ft_lstadd_front(head_b, new_b);
-	*head_a = ptr_a->next;
-	free(ptr_a);
+	ptr_b = *head_b;
+	new_a = ft_lstnew((*head_b)->data);
+	ft_lstadd_front(head_a, new_a);
+	*head_b = ptr_b->next;
+	free(ptr_b);
 }

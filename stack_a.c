@@ -27,7 +27,7 @@ void	ft_stack_a(int ac, char *av[], t_stack *head_a)
 {
 	int		*arr;
 	int		i;
-	
+
 	arr = atoi_av(ac, av);
 	i = 1;	
 	ac--;
@@ -38,4 +38,5 @@ void	ft_stack_a(int ac, char *av[], t_stack *head_a)
 	}
 	printf("//stack A\n");
 	ft_print_node(head_a);
+	free(arr);
 }

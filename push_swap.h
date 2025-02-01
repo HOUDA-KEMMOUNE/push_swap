@@ -52,6 +52,6 @@ void		ft_stack_b(t_stack **head_a, t_stack **head_b);
 //-----------------actions-------------
 void		sa(t_stack **head);
 // void		sb(t_stack **head_b);
-// void		ss(t_stack **head_a, t_stack **head_b)
+// void		ss(t_stack **head_a, t_stack **head_b);
 void		pb(t_stack **head_a, t_stack **head_b);
 #endif

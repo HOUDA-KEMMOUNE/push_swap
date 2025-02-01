@@ -33,9 +33,7 @@ int	main(int ac, char *av[])
 
 	check_errors(ac, av);
 	arr = atoi_av(ac, av);
-	head_a = malloc(sizeof(t_stack));
-	head_a->data = arr[0];
-	head_a->next = NULL;	
+	head_a = ft_lstnew(arr[0]);	
 	ft_stack_a(ac, av, head_a);
 	head_b = NULL;
 	ft_stack_b(&head_a, &head_b);

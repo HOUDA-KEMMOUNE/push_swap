@@ -23,18 +23,13 @@
 // 	head_a->next = NULL;
 // }
 
-t_stack	*ft_stack_a(int ac, char *av[])
+void	ft_stack_a(int ac, char *av[], t_stack *head_a)
 {
 	int		*arr;
 	int		i;
-	t_stack	*head_a;
-
-	i = 1;
+	
 	arr = atoi_av(ac, av);
-	arr = atoi_av(ac, av);
-	head_a = malloc(sizeof(t_stack));
-	head_a->data = arr[0];
-	head_a->next = NULL;
+	i = 1;	
 	ac--;
 	while (i < ac)
 	{
@@ -43,8 +38,4 @@ t_stack	*ft_stack_a(int ac, char *av[])
 	}
 	printf("//stack A\n");
 	ft_print_node(head_a);
-	ft_lstclear(&head_a);
-	free(head_a);
-	free(arr);
-	return (head_a);
 }

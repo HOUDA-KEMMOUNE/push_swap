@@ -47,8 +47,8 @@ void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);
-t_stack		*ft_stack_a(int ac, char *av[]);
-t_stack		*ft_stack_b(t_stack *head_a);
+void		ft_stack_a(int ac, char *av[], t_stack *head_a);
+void		ft_stack_b(t_stack **head_a, t_stack **head_b);
 //-----------------actions-------------
 void		sa(t_stack **head);
 // void		sb(t_stack **head_b);

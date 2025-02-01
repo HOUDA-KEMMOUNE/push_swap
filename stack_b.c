@@ -12,16 +12,10 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_stack_b(t_stack *head_a)
-{
-	t_stack	*head_b;
-	
-	// head_b = malloc(sizeof(t_stack));
-	// head_b->data = 0;
-	// head_b->next = NULL;
-	head_b = NULL;
-	pb(&head_a, &head_b);
+void	ft_stack_b(t_stack **head_a, t_stack **head_b)
+{	
 	printf("//stack B\n");
-	ft_print_node(head_b);
-	return (head_b);
+	pb(head_a, head_b);
+	ft_print_node(*head_b);
+	ft_print_node(*head_a);
 }

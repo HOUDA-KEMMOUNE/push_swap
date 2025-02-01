@@ -28,10 +28,17 @@ void	check_errors(int ac, char *av[])
 int	main(int ac, char *av[])
 {
 	t_stack	*head_a;
+	t_stack	*head_b;
+	int		*arr;
 
 	check_errors(ac, av);
-	// stack_a(ac, av);
-	head_a = ft_stack_a(ac, av);
-	ft_stack_b(head_a);
+	arr = atoi_av(ac, av);
+	head_a = malloc(sizeof(t_stack));
+	head_a->data = arr[0];
+	head_a->next = NULL;	
+	ft_stack_a(ac, av, head_a);
+	head_b = NULL;
 	// ft_print_node(head_b);
+	// ft_print_node(head_a);
+	ft_stack_b(&head_a, &head_b);
 }

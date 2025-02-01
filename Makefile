@@ -20,8 +20,8 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g3
 
-SRC = bubble_sort.c ft_split.c main.c stack_b.c swaps.c utils3.c check_if_dup.c ft_print_node.c \
-	main_help_fun.c pushes.c stack_a.c stack_helper.c utils2.c utils4.c node_help_fun.c
+SRC = bubble_sort.c ft_split.c main.c stacks.c swaps.c utils3.c check_if_dup.c ft_print_node.c \
+	main_help_fun.c pushes.c stack_helper.c utils2.c utils4.c node_help_fun.c
 
 OBJ = $(SRC:.c=.o)
 

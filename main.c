@@ -54,6 +54,21 @@ int	main(int ac, char *av[])
 		ft_print_node(head_b);
 	}
 	printf("---------------------------\n");
+	printf("---------------------------\n");
+	printf("Before\nStack A\n");
+	ft_print_node(head_a);
+	printf("Before\nStack A\n");
+	ra(&head_a);
+	ft_print_node(head_a);
+	printf("---------------------------\n");
+	printf("---------------------------\n");
+	printf("---------------------------\n");
+	printf("Before\nStack B\n");
+	ft_print_node(head_b);
+	printf("Before\nStack B\n");
+	rb(&head_b);
+	ft_print_node(head_b);
+	printf("---------------------------\n");
 	free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);

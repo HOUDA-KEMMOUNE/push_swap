@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "push_swap.h": "c",
-        "charconv": "c"
+        "charconv": "c",
+        "libft.h": "c"
     }
 }

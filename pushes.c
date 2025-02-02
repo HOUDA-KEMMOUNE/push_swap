@@ -20,7 +20,7 @@ void    pb(t_stack **head_a, t_stack **head_b)
 	if (!(*head_a))
 		return ;
 	ptr_a = *head_a;
-	new_b = ft_lstnew((*head_a)->data);
+	new_b = ft_lstnew(ptr_a->data);
 	ft_lstadd_front(head_b, new_b);
 	*head_a = ptr_a->next;
 	free(ptr_a);
@@ -34,7 +34,7 @@ void    pa(t_stack **head_a, t_stack **head_b)
 	if (!(*head_b))
 		return ;
 	ptr_b = *head_b;
-	new_a = ft_lstnew((*head_b)->data);
+	new_a = ft_lstnew(ptr_b->data);
 	ft_lstadd_front(head_a, new_a);
 	*head_b = ptr_b->next;
 	free(ptr_b);

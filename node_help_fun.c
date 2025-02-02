@@ -53,4 +53,29 @@ t_stack	*ft_lstnew(int content)
 	return (ptr);
 }
 
+/*-------ft_lstlast---------------*/
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	t_stack	*ptr;
+
+	if (!lst)
+		return (NULL);
+	ptr = lst;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	return (ptr);
+}
+/*-------ft_lstadd_back---------------*/
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack	*tail;
+
+	if (!new || !lst)
+		return ;
+	tail = ft_lstlast(*lst);
+	if (tail == NULL)
+		*lst = new;
+	else
+		tail->next = new;
+}
 /*------------end------------------*/

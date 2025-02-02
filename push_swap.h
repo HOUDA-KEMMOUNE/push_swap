@@ -44,6 +44,7 @@ void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);
@@ -55,5 +56,7 @@ void		sb(t_stack **head_b);
 void		ss(t_stack **head_a, t_stack **head_b);
 void		pb(t_stack **head_a, t_stack **head_b);
 void		pa(t_stack **head_a, t_stack **head_b);
+void		ra(t_stack **head_a);
+void		rb(t_stack **head_b);
 
 #endif

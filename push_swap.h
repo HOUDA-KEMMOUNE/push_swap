@@ -45,6 +45,7 @@ void		check_errors(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
+int			ft_lstsize(t_stack *lst);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);
@@ -62,5 +63,8 @@ void		rr(t_stack **head_a, t_stack **head_b);
 void		rra(t_stack **head_a);
 void		rrb(t_stack **head_b);
 void		rrr(t_stack **head_a, t_stack **head_b);
+//------------------algos-----------------
+void		check_algo(t_stack *head_a);
+void    	algo_for_two(t_stack **head_a);
 
 #endif

@@ -14,16 +14,16 @@
 
 void    algo_for_two(t_stack **head_a)
 {
-    t_stack *ptr_a;
+	t_stack *ptr_a;
 
-    if (!(*head_a))
-        return ;
-    ptr_a = *head_a;
-    if (ptr_a-> data > ptr_a->next->data)
-    {
-        sa(head_a);
-        write(1, "sa\n", 3);
-    }
-    else
-        return ;
+	if (!(*head_a))
+		return ;
+	ptr_a = *head_a;
+	if (ptr_a-> data > ptr_a->next->data)
+	{
+		sa(head_a);
+		write(1, "sa\n", 3);
+	}
+	else
+		return ;
 }

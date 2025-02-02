@@ -78,4 +78,23 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	else
 		tail->next = new;
 }
+/*-------ft_lstadd_back---------------*/
+
+int	ft_lstsize(t_stack *lst)
+{
+	t_stack	*ptr;
+	int		count;
+
+	if (!lst)
+		return (0);
+	ptr = lst;
+	count = 0;
+	while (ptr != NULL)
+	{
+		count++;
+		ptr = ptr->next;
+	}
+	return (count);
+}
+
 /*------------end------------------*/

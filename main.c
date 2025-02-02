@@ -28,18 +28,19 @@ void	check_errors(int ac, char *av[])
 int	main(int ac, char *av[])
 {
 	t_stack	*head_a;
-	t_stack	*head_b;
+	// t_stack	*head_b;
 	int		*arr;
 
 	check_errors(ac, av);
 	arr = atoi_av(ac, av);
 	head_a = ft_lstnew(arr[0]);	
 	ft_stack_a(ac, av, head_a);
-	head_b = NULL;
-	ft_stack_b(&head_a, &head_b);
-	pb(&head_a, &head_b);
+	// head_b = NULL;
 
+	check_algo(head_a);	
+	ft_print_node(head_a);
+	// write(1, "sa\n", 3);
 	free(arr);
 	ft_lstclear(&head_a);
-	ft_lstclear(&head_b);
+	// ft_lstclear(&head_b);
 }

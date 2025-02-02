@@ -39,3 +39,11 @@ void    rb(t_stack **head_b)
 	*head_b = ptr_b->next;
 	free(ptr_b);
 }
+
+void    rr(t_stack **head_a, t_stack **head_b)
+{
+	if (!(*head_a) || !(*head_b))
+		return ;
+	ra(head_a);
+	rb(head_b);
+}

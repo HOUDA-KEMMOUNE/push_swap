@@ -37,13 +37,25 @@ int	main(int ac, char *av[])
 	ft_stack_a(ac, av, head_a);
 	head_b = NULL;
 	ft_stack_b(&head_a, &head_b);
-	printf("---------------------------\n");
-	printf("Before\nStack A\n");
-	ft_print_node(head_a);
-	rra(&head_a);
-	printf("After\nStack A\n");
-	ft_print_node(head_a);
-	printf("---------------------------\n");
+	pb(&head_a, &head_b);
+	if ((head_a->next == NULL) || (head_b->next == NULL))
+		printf("Check your stacks :/\n");
+	else
+	{
+		printf("---------------------------\n");
+		printf("Before\n");
+		printf("Stack A\n");
+		ft_print_node(head_a);
+		printf("Stack B\n");
+		ft_print_node(head_b);
+		rrr(&head_a, &head_b);
+		printf("After\n");
+		printf("Stack A\n");
+		ft_print_node(head_a);
+		printf("Stack B\n");
+		ft_print_node(head_b);
+		printf("---------------------------\n");
+	}
 
 	free(arr);
 	ft_lstclear(&head_a);

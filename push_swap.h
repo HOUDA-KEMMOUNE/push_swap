@@ -59,5 +59,6 @@ void		pa(t_stack **head_a, t_stack **head_b);
 void		ra(t_stack **head_a);
 void		rb(t_stack **head_b);
 void		rr(t_stack **head_a, t_stack **head_b);
+void		rra(t_stack **head_a);
 
 #endif

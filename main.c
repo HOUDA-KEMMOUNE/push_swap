@@ -37,7 +37,14 @@ int	main(int ac, char *av[])
 	ft_stack_a(ac, av, head_a);
 	head_b = NULL;
 	ft_stack_b(&head_a, &head_b);
-	ft_stack_b(&head_a, &head_b);
+	printf("---------------------------\n");
+	printf("Before\nStack A\n");
+	ft_print_node(head_a);
+	rra(&head_a);
+	printf("After\nStack A\n");
+	ft_print_node(head_a);
+	printf("---------------------------\n");
+
 	free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);

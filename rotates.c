@@ -17,7 +17,7 @@ void    ra(t_stack **head_a)
 	t_stack *ptr_a;
 	t_stack *new_a;
 
-	if (!(*head_a))
+	if (!(*head_a) && (*head_a)->next == NULL)
 		return ;
 	ptr_a = *head_a;
 	new_a = ft_lstnew(ptr_a->data);
@@ -31,7 +31,7 @@ void    rb(t_stack **head_b)
 	t_stack *ptr_b;
 	t_stack *new_b;
 
-	if (!(*head_b))
+	if (!(*head_b) && (*head_b)->next == NULL)
 		return ;
 	ptr_b = *head_b;
 	new_b = ft_lstnew(ptr_b->data);
@@ -42,7 +42,7 @@ void    rb(t_stack **head_b)
 
 void    rr(t_stack **head_a, t_stack **head_b)
 {
-	if (!(*head_a) || !(*head_b))
+	if ((!(*head_a) || !(*head_b)) && (((*head_a)->next == NULL) || ((*head_b)->next == NULL)))
 		return ;
 	ra(head_a);
 	rb(head_b);

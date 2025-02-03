@@ -47,8 +47,10 @@ void	algo_for_three(t_stack **head_a)
 		case_three(head_a);
 	else if ((ptr_a->data == min) && (ptr_a->next->data == max))
 		case_four(head_a);
-	else
+	else if ((ptr_a->next->data == max) && (ptr_a->next->next->data == min))
 		case_five(head_a);
+	else
+		return ;
 }
 
 static void	size_for_four_five(t_stack **head_a, t_stack **head_b)

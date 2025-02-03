@@ -12,14 +12,6 @@
 
 #include "push_swap.h"
 
-/*-------------check_if_nbr----------------*/
-int	check_if_nbr(char **av, int ac)
-{
-	if (ac <= 1)
-		exit(1);
-	neg_and_pos(av, ac);
-	return (0);
-}
 /*-------------join_split_arg----------------*/
 
 char	**join_split_arg(int ac, char **av)

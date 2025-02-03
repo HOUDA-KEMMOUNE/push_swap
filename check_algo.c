@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	check_algo(t_stack **head_a)
+void	check_algo(t_stack **head_a, t_stack **head_b)
 {
 	int	size;
 
@@ -23,6 +23,8 @@ void	check_algo(t_stack **head_a)
 		algo_for_two(head_a);
 	else if (size == 3)
 		algo_for_three(head_a);
+	else if (size == 4 || size == 5)
+		algo_for_four_five(head_a, head_b);
 	else
 		return ;
 }

@@ -50,3 +50,39 @@ void	algo_for_three(t_stack **head_a)
 	else
 		case_five(head_a);
 }
+
+static void	size_for_four_five(t_stack **head_a, t_stack **head_b)
+{
+	int		min;
+	int		size;
+
+	size = ft_lstsize(*head_a);
+	while ((size > 3))
+	{
+		min = check_small_num(*head_a);
+		if ((*head_a)->data == min)
+		{
+			pb(head_a, head_b);
+			write(1, "pb\n", 3);
+			size--;
+		}
+		else
+		{
+			ra(head_a);
+			write(1, "ra\n", 3);
+		}
+	}
+}
+
+void	algo_for_four_five(t_stack **head_a, t_stack **head_b)
+{
+	if (!(*head_a) && !(*head_b))
+		return ;
+	size_for_four_five(head_a, head_b);
+	algo_for_three(head_a);
+	while ((*head_b) != NULL)
+	{
+		pa(head_a, head_b);
+		write(1, "pa\n", 3);
+	}
+}

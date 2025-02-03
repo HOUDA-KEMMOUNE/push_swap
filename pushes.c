@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    pb(t_stack **head_a, t_stack **head_b)
+void	pb(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*ptr_a;
 	t_stack	*new_b;
@@ -26,7 +26,7 @@ void    pb(t_stack **head_a, t_stack **head_b)
 	free(ptr_a);
 }
 
-void    pa(t_stack **head_a, t_stack **head_b)
+void	pa(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*ptr_b;
 	t_stack	*new_a;

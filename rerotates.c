@@ -14,7 +14,7 @@
 
 void	rra(t_stack **head_a)
 {
-	t_stack *ptr_a;
+	t_stack	*ptr_a;
 	t_stack	*prev;
 	t_stack	*last;
 
@@ -31,12 +31,11 @@ void	rra(t_stack **head_a)
 	prev->next = NULL;
 	last->next = *head_a;
 	*head_a = last;
-	// ft_print_node(*head_a);
 }
 
 void	rrb(t_stack **head_b)
 {
-	t_stack *ptr_b;
+	t_stack	*ptr_b;
 	t_stack	*prev;
 	t_stack	*last;
 
@@ -57,7 +56,9 @@ void	rrb(t_stack **head_b)
 
 void	rrr(t_stack **head_a, t_stack **head_b)
 {
-	if ((!(*head_a) || !(*head_b)) && (((*head_a)->next == NULL) || ((*head_b)->next == NULL)))
+	if ((!(*head_a) || !(*head_b))
+		&& (((*head_a)->next == NULL)
+			|| ((*head_b)->next == NULL)))
 		return ;
 	rra(head_a);
 	rrb(head_b);

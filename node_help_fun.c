@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+/*-------ft_lstnew---------------*/
+t_stack	*ft_lstnew(int content)
+{
+	t_stack	*ptr;
+
+	ptr = malloc(sizeof(t_stack));
+	if (!ptr)
+		return (NULL);
+	ptr->data = content;
+	ptr->next = NULL;
+	return (ptr);
+}
+
 /*-------ft_lstclear---------------*/
 void	ft_lstclear(t_stack **lst)
 {
@@ -38,63 +51,6 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 		new->next = *lst;
 		*lst = new;
 	}
-}
-
-/*-------ft_lstnew---------------*/
-t_stack	*ft_lstnew(int content)
-{
-	t_stack	*ptr;
-
-	ptr = malloc(sizeof(t_stack));
-	if (!ptr)
-		return (NULL);
-	ptr->data = content;
-	ptr->next = NULL;
-	return (ptr);
-}
-
-/*-------ft_lstlast---------------*/
-t_stack	*ft_lstlast(t_stack *lst)
-{
-	t_stack	*ptr;
-
-	if (!lst)
-		return (NULL);
-	ptr = lst;
-	while (ptr->next != NULL)
-		ptr = ptr->next;
-	return (ptr);
-}
-/*-------ft_lstadd_back---------------*/
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
-{
-	t_stack	*tail;
-
-	if (!new || !lst)
-		return ;
-	tail = ft_lstlast(*lst);
-	if (tail == NULL)
-		*lst = new;
-	else
-		tail->next = new;
-}
-/*-------ft_lstadd_back---------------*/
-
-int	ft_lstsize(t_stack *lst)
-{
-	t_stack	*ptr;
-	int		count;
-
-	if (!lst)
-		return (0);
-	ptr = lst;
-	count = 0;
-	while (ptr != NULL)
-	{
-		count++;
-		ptr = ptr->next;
-	}
-	return (count);
 }
 
 /*------------end------------------*/

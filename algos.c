@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void    algo_for_two(t_stack **head_a)
+void	algo_for_two(t_stack **head_a)
 {
-	t_stack *ptr_a;
+	t_stack	*ptr_a;
 
 	if (!(*head_a))
 		return ;
@@ -28,11 +28,11 @@ void    algo_for_two(t_stack **head_a)
 		return ;
 }
 
-void    algo_for_three(t_stack **head_a)
+void	algo_for_three(t_stack **head_a)
 {
 	t_stack	*ptr_a;
-	int	max;
-	int	min;
+	int		max;
+	int		min;
 
 	if (!(*head_a))
 		return ;
@@ -40,30 +40,13 @@ void    algo_for_three(t_stack **head_a)
 	max = check_big_num(*head_a);
 	min = check_small_num(*head_a);
 	if ((ptr_a->next->data == min) && (ptr_a->next->next->data == max))
-	{
-		sa(head_a);
-		write(1, "sa\n", 3);
-	}
+		case_one(head_a);
 	else if ((ptr_a->data == max) && (ptr_a->next->next->data == min))
-	{
-		sa(head_a);
-		rra(head_a);
-		write(1, "sa\nrra\n", 7);
-	}
+		case_two(head_a);
 	else if ((ptr_a->data == max) && (ptr_a->next->data == min))
-	{
-		ra(head_a);
-		write(1, "ra\n", 3);
-	}
+		case_three(head_a);
 	else if ((ptr_a->data == min) && (ptr_a->next->data == max))
-	{
-		sa(head_a);
-		ra(head_a);
-		write(1, "sa\nra\n", 6);
-	}
+		case_four(head_a);
 	else
-	{
-		rra(head_a);
-		write(1, "rra\n", 4);
-	}
+		case_five(head_a);
 }

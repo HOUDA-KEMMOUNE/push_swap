@@ -18,23 +18,19 @@ void	ft_stack_a(int ac, char *av[], t_stack *head_a)
 	int		i;
 
 	arr = atoi_av(ac, av);
-	i = 1;	
+	i = 1;
 	ac--;
 	while (i < ac)
 	{
 		add_node(head_a, arr[i]);
 		i++;
 	}
-	// printf("//stack A\n");
-	// ft_print_node(head_a);
 	free(arr);
 }
 
 void	ft_stack_b(t_stack **head_a, t_stack **head_b)
-{	
+{
 	printf("//stack B\n");
 	pb(head_a, head_b);
 	ft_print_node(*head_b);
-	// printf("//stack A\n");
-	// ft_print_node(*head_a);
 }

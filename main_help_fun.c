@@ -18,7 +18,6 @@ int	check_if_nbr(char **av, int ac)
 	if (ac <= 1)
 		exit(1);
 	neg_and_pos(av, ac);
-	//printf("------->  Right\n");
 	return (0);
 }
 /*-------------join_split_arg----------------*/

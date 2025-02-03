@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int check_if_dup(char **av, int ac)
+int	check_if_dup(char **av, int ac)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 1;

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    ft_print_node(t_stack *head)
+void	ft_print_node(t_stack *head)
 {
 	t_stack	*ptr;
 

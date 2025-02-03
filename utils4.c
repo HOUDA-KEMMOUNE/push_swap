@@ -32,11 +32,12 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return (0);
 }
+
 /*-------------------------check_big_num---------------------*/
 int	check_big_num(t_stack *head)
 {
 	t_stack	*ptr;
-	int	max;
+	int		max;
 
 	if (!head)
 		exit (1);
@@ -48,7 +49,6 @@ int	check_big_num(t_stack *head)
 			max = ptr->data;
 		ptr = ptr->next;
 	}
-	// printf("The max --> %d\n", max);
 	return (max);
 }
 
@@ -56,7 +56,7 @@ int	check_big_num(t_stack *head)
 int	check_small_num(t_stack *head)
 {
 	t_stack	*ptr;
-	int	min;
+	int		min;
 
 	if (!head)
 		exit (1);
@@ -68,7 +68,6 @@ int	check_small_num(t_stack *head)
 			min = ptr->data;
 		ptr = ptr->next;
 	}
-	// printf("The min --> %d\n", min);
 	return (min);
 }
 

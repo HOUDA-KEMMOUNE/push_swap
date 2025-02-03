@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    check_algo(t_stack **head_a)
+void	check_algo(t_stack **head_a)
 {
 	int	size;
 

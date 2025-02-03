@@ -68,7 +68,12 @@ void		rrb(t_stack **head_b);
 void		rrr(t_stack **head_a, t_stack **head_b);
 //------------------algos-----------------
 void		check_algo(t_stack **head_a);
-void    	algo_for_two(t_stack **head_a);
+void		algo_for_two(t_stack **head_a);
 void		algo_for_three(t_stack **head_a);
-
+//------------------algos_for_3(cases)-----------------
+void		case_one(t_stack **head_a);
+void		case_two(t_stack **head_a);
+void		case_three(t_stack **head_a);
+void		case_four(t_stack **head_a);
+void		case_five(t_stack **head_a);
 #endif

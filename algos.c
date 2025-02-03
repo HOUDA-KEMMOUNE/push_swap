@@ -50,5 +50,10 @@ void    algo_for_three(t_stack **head_a)
 		rra(head_a);
 		write(1, "sa\nrra\n", 7);
 	}
+	else if ((ptr_a->data == max) && (ptr_a->next->data == min))
+	{
+		ra(head_a);
+		write(1, "sa\n", 3);
+	}
 	// ft_print_node(*head_a);
 }

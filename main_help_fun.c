@@ -15,28 +15,9 @@
 /*-------------check_if_nbr----------------*/
 int	check_if_nbr(char **av, int ac)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
 	if (ac <= 1)
 		exit(1);
-	while (i < ac)
-	{
-		while (av[i][j])
-		{
-			if (av[i][j] >= '0' && av[i][j] <= '9')
-				j++;
-			else
-			{
-				printf("------->  Error\n");
-				exit(1);
-			}
-		}
-		j = 0;
-		i++;
-	}
+	neg_and_pos(av, ac);
 	//printf("------->  Right\n");
 	return (0);
 }

@@ -42,6 +42,7 @@ int			check_if_dup(char **av, int ac);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
+void		neg_and_pos(char **av, int ac);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -49,6 +50,8 @@ int			ft_lstsize(t_stack *lst);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);
+int			check_big_num(t_stack *head);
+int			check_small_num(t_stack *head);
 void		ft_stack_a(int ac, char *av[], t_stack *head_a);
 void		ft_stack_b(t_stack **head_a, t_stack **head_b);
 //-----------------actions-------------
@@ -66,5 +69,6 @@ void		rrr(t_stack **head_a, t_stack **head_b);
 //------------------algos-----------------
 void		check_algo(t_stack *head_a);
 void    	algo_for_two(t_stack **head_a);
+void		algo_for_three(t_stack **head_a);
 
 #endif

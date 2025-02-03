@@ -21,6 +21,8 @@ void    check_algo(t_stack *head_a)
 	size = ft_lstsize(head_a);
 	if (size == 2)
 		algo_for_two(&head_a);
+	else if (size == 3)
+		algo_for_three(&head_a);
 	else
 		return ;
 }

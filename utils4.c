@@ -32,4 +32,71 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return (0);
 }
+/*-------------------------check_big_num---------------------*/
+int	check_big_num(t_stack *head)
+{
+	t_stack	*ptr;
+	int	max;
+
+	if (!head)
+		exit (1);
+	ptr = head;
+	max = ptr->data;
+	while (ptr != NULL)
+	{
+		if (ptr->data > max)
+			max = ptr->data;
+		ptr = ptr->next;
+	}
+	// printf("The max --> %d\n", max);
+	return (max);
+}
+
+/*-------------------------check_big_num---------------------*/
+int	check_small_num(t_stack *head)
+{
+	t_stack	*ptr;
+	int	min;
+
+	if (!head)
+		exit (1);
+	ptr = head;
+	min = ptr->data;
+	while (ptr != NULL)
+	{
+		if (ptr->data < min)
+			min = ptr->data;
+		ptr = ptr->next;
+	}
+	// printf("The min --> %d\n", min);
+	return (min);
+}
+
+/*-------------------------neg_and_pos---------------------*/
+void	neg_and_pos(char **av, int ac)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (i < ac)
+	{
+		if (av[i][0] == '-' || av[i][0] == '+')
+			j++;
+		while (av[i][j])
+		{
+			if (av[i][j] >= '0' && av[i][j] <= '9')
+				j++;
+			else
+			{
+				printf("------->  Error\n");
+				exit(1);
+			}
+		}
+		j = 0;
+		i++;
+	}
+}
+
 /*---------------------------end-----------------------*/

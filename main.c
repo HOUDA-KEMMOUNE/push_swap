@@ -39,7 +39,9 @@ int	main(int ac, char *av[])
 
 	check_algo(head_a);	
 	ft_print_node(head_a);
-	// write(1, "sa\n", 3);
+	// check_small_num(head_a);
+
+	
 	free(arr);
 	ft_lstclear(&head_a);
 	// ft_lstclear(&head_b);

@@ -27,3 +27,21 @@ void    algo_for_two(t_stack **head_a)
 	else
 		return ;
 }
+
+void    algo_for_three(t_stack **head_a)
+{
+	t_stack	*ptr_a;
+	int	max;
+	int	min;
+
+	if (!(*head_a))
+		return ;
+	ptr_a = *head_a;
+	max = check_big_num(*head_a);
+	min = check_small_num(*head_a);
+	if ((ptr_a->next->data == min) && (ptr_a->next->next->data == max))
+	{
+		sa(head_a);
+		write(1, "sa\n", 3);
+	}
+}

@@ -31,6 +31,7 @@ void	rra(t_stack **head_a)
 	prev->next = NULL;
 	last->next = *head_a;
 	*head_a = last;
+	// ft_print_node(*head_a);
 }
 
 void	rrb(t_stack **head_b)

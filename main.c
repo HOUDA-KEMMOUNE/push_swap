@@ -37,7 +37,7 @@ int	main(int ac, char *av[])
 	ft_stack_a(ac, av, head_a);
 	// head_b = NULL;
 
-	check_algo(head_a);	
+	check_algo(&head_a);	
 	ft_print_node(head_a);
 	// check_small_num(head_a);
 

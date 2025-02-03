@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-void    check_algo(t_stack *head_a)
+void    check_algo(t_stack **head_a)
 {
 	int	size;
 
 	if (!head_a)
 		return ;
-	size = ft_lstsize(head_a);
+	size = ft_lstsize(*head_a);
 	if (size == 2)
-		algo_for_two(&head_a);
+		algo_for_two(head_a);
 	else if (size == 3)
-		algo_for_three(&head_a);
+		algo_for_three(head_a);
 	else
 		return ;
 }

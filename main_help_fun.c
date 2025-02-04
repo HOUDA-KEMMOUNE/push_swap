@@ -17,15 +17,15 @@
 char	**join_split_arg(int ac, char **av)
 {
 	int		i;
-	int		is_nbr;
 	char	*join;
 	char	*tmp;
 	char	**new_av;
+	int		check_num;
 
-	is_nbr = check_if_nbr(av, ac);
 	i = 1;
+	check_num = check_if_nbr(av, ac);
 	ac++;
-	if (is_nbr == 0)
+	if (ac > 1 && check_num == 0)
 	{
 		join = ft_strdup("");
 		while (av[i])

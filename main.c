@@ -14,7 +14,7 @@
 
 void	print_error(void)
 {
-	printf("------->  Error\n");
+	write(1, "Error\n", 6);
 	exit (1);
 }
 

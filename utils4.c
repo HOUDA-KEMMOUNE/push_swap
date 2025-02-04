@@ -88,10 +88,7 @@ void	neg_and_pos(char **av, int ac)
 			if (av[i][j] >= '0' && av[i][j] <= '9')
 				j++;
 			else
-			{
-				printf("------->  Error (neg_and_pos)\n");
-				exit(1);
-			}
+				print_error();
 		}
 		j = 0;
 		i++;

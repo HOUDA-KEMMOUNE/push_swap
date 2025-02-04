@@ -74,6 +74,7 @@ void		check_algo(t_stack **head_a, t_stack **head_b);
 void		algo_for_two(t_stack **head_a);
 void		algo_for_three(t_stack **head_a);
 void		algo_for_four_five(t_stack **head_a, t_stack **head_b);
+void		algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac);
 //------------------algos_for_3(cases)-----------------
 void		case_one(t_stack **head_a);
 void		case_two(t_stack **head_a);

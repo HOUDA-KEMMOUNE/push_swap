@@ -21,18 +21,14 @@ void	print_error(void)
 void	check_errors(int ac, char *av[])
 {
 	int		*arr;
-	int		*sorted_arr;
-	// int		int_range;
+	// int		*sorted_arr;
 
 	check_if_dup(av, ac);
 	arr = atoi_av(ac, av);
-	// check_int_range(arr, ac);
-	sorted_arr = bubble_sort(arr, ac - 1);
-	// int_range = check_int_range(arr, ac);
-	if (sorted_arr == NULL)
-		exit(1);
-	// check_int_range(arr, ac);
-	// if (int_range )
+	bubble_sort(arr, ac - 1);
+	empty_arg(ac, av);
+	// if (sorted_arr == NULL)
+	// 	exit(1);
 	free(arr);
 }
 

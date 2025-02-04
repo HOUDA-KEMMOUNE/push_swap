@@ -20,5 +20,20 @@ int	check_if_nbr(char **av, int ac)
 	neg_and_pos(av, ac);
 	return (0);
 }
+int	empty_arg(int ac, char *av[])
+{
+	int	i;
 
+	i = 1;
+	while (i < ac)
+	{
+		if (av[i][0] == '\0')
+		{
+			printf("(empty_arg)");
+			print_error();
+		}
+		i++;
+	}
+	return (0);
+}
 /*-------------------end--------------------*/

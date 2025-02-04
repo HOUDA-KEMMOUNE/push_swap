@@ -45,6 +45,7 @@ void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
 void		print_error(void);
 void		neg_and_pos(char **av, int ac);
+int			empty_arg(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);

@@ -21,14 +21,11 @@ void	print_error(void)
 void	check_errors(int ac, char *av[])
 {
 	int		*arr;
-	// int		*sorted_arr;
 
 	check_if_dup(av, ac);
 	arr = atoi_av(ac, av);
 	bubble_sort(arr, ac - 1);
 	empty_arg(ac, av);
-	// if (sorted_arr == NULL)
-	// 	exit(1);
 	free(arr);
 }
 
@@ -41,14 +38,11 @@ int	main(int ac, char *av[])
 	arr = atoi_av(ac, av);
 	head_a = ft_lstnew(arr[0]);
 	head_b = NULL;
-
 	check_errors(ac, av);
-
 	ft_stack_a(ac, av, head_a);
 	check_algo(&head_a, &head_b);
 	ft_print_node(head_a);
 	ft_print_node(head_b);
-
 	free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);

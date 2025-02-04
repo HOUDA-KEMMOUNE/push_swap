@@ -83,10 +83,7 @@ int	ft_atoi(const char *str)
 	}
 	result = result * sign;
 	if (result < INT_MIN || result > INT_MAX)
-	{
-		printf("(check_int_range)");
 		print_error();
-	}
 	return (result);
 }
 /*---------------------------end-----------------------*/

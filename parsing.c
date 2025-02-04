@@ -20,6 +20,7 @@ int	check_if_nbr(char **av, int ac)
 	neg_and_pos(av, ac);
 	return (0);
 }
+
 int	empty_arg(int ac, char *av[])
 {
 	int	i;

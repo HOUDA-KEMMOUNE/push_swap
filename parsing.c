@@ -21,12 +21,4 @@ int	check_if_nbr(char **av, int ac)
 	return (0);
 }
 
-/*-------------fun_name----------------*/
-// int	check_if_nbr(char **av, int ac)
-// {
-// 	if (ac <= 1)
-// 		exit(1);
-// 	neg_and_pos(av, ac);
-// 	return (0);
-// }
 /*-------------------end--------------------*/

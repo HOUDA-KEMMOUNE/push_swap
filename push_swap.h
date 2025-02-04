@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 // # include "ft_printf.h"
 
 typedef struct s_stack
@@ -42,6 +43,7 @@ int			check_if_dup(char **av, int ac);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
+void		print_error(void);
 void		neg_and_pos(char **av, int ac);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);

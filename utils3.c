@@ -62,9 +62,9 @@ static int	check(const char *str, int i)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		sign;
-	int		result;
+	int			i;
+	int			sign;
+	long long	result;
 
 	i = 0;
 	sign = 1;
@@ -81,7 +81,12 @@ int	ft_atoi(const char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return ((int)result * sign);
+	result = result * sign;
+	if (result < INT_MIN || result > INT_MAX)
+	{
+		printf("(check_int_range)");
+		print_error();
+	}
+	return (result);
 }
-
 /*---------------------------end-----------------------*/

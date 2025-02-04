@@ -89,7 +89,7 @@ void	neg_and_pos(char **av, int ac)
 				j++;
 			else
 			{
-				printf("------->  Error\n");
+				printf("------->  Error (neg_and_pos)\n");
 				exit(1);
 			}
 		}

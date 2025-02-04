@@ -30,7 +30,7 @@ int	check_if_dup(char **av, int ac)
 			{
 				if (ft_strcmp(av[i], av[j]) == 0)
 				{
-					printf("------->  Error\n");
+					printf("------->  Error (check_if_dup)\n");
 					exit(1);
 				}
 				j++;

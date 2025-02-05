@@ -70,7 +70,7 @@ void		rra(t_stack **head_a);
 void		rrb(t_stack **head_b);
 void		rrr(t_stack **head_a, t_stack **head_b);
 //------------------algos-----------------
-void		check_algo(t_stack **head_a, t_stack **head_b);
+void		check_algo(t_stack **head_a, t_stack **head_b, int *arr, int ac);
 void		algo_for_two(t_stack **head_a);
 void		algo_for_three(t_stack **head_a);
 void		algo_for_four_five(t_stack **head_a, t_stack **head_b);

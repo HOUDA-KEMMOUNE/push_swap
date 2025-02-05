@@ -23,9 +23,9 @@ char	**join_split_arg(int ac, char **av)
 	int		check_num;
 
 	i = 1;
+	(void)ac;
 	check_num = check_if_nbr(av, ac);
-	ac++;
-	if (ac > 1 && check_num == 0)
+	if (check_num == 0)
 	{
 		join = ft_strdup("");
 		while (av[i])
@@ -65,10 +65,11 @@ int	*atoi_av(int ac, char *av[])
 	int		*arr;
 	int		i;
 
+
 	new_av = join_split_arg(ac, av);
 	if (new_av != NULL)
 	{
-		arr = malloc((ac - 1) * sizeof(int));
+		arr = malloc((ac) * sizeof(int));
 		if (!arr)
 		{
 			free_split(new_av);

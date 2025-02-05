@@ -37,11 +37,12 @@ int	main(int ac, char *av[])
 	int		*arr_bub_sort;
 
 	arr = atoi_av(ac, av);
-	arr_bub_sort = bubble_sort(arr, ac);
 	head_a = ft_lstnew(arr[0]);
+	arr_bub_sort = bubble_sort(arr, ac - 1);
 	head_b = NULL;
 	check_errors(ac, av);
 	ft_stack_a(ac, av, head_a);
+	ft_print_node(head_a);
 	check_algo(&head_a, &head_b, arr_bub_sort, ac);
 	ft_print_node(head_a);
 	ft_print_node(head_b);

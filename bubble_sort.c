@@ -28,13 +28,14 @@ int	*bubble_sort(int *arr, int ac)
 
 	i = 0;
 	j = 0;
+	
 	if (!arr && ac <= 1)
 		exit(1);
 	while (i < ac - 1)
 	{
 		while (j < ac - i - 1)
 		{
-			if (arr[j] > arr[j + 1])
+			if (arr[j + 1] && arr[j] > arr[j + 1])
 				ft_swap(&arr[j], &arr[j + 1]);
 			j++;
 		}

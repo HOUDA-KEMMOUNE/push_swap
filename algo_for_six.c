@@ -19,6 +19,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 	int		end;
 	int		tmp;
 	// int		size_b;
+	// int		size_a;
 	// int		mid;
 	int		max;
 	t_stack	*ptr_a;
@@ -26,10 +27,12 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 
 	if (!(*head_a))
 		return ;
+	(void)ac;
 	start = 0;
 	ptr_a = *head_a;
 	ptr_b = *head_b;
 	// size_b = ft_lstsize(*head_b);
+	// size_a = ft_lstsize(*head_a);
 	// ac--;
 	tmp = ac;
 	printf("tmp --> %d\tac --> %d\n", tmp, ac);

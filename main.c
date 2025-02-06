@@ -20,13 +20,8 @@ void	print_error(void)
 
 void	check_errors(int ac, char *av[])
 {
-	int		*arr;
-
 	check_if_dup(av, ac);
-	arr = atoi_av(ac, av);
-	bubble_sort(arr, ac - 1);
 	empty_arg(ac, av);
-	free(arr);
 }
 
 int	main(int ac, char *av[])

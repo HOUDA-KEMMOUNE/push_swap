@@ -45,7 +45,7 @@ int	main(int ac, char *av[])
 	ft_print_node(head_a);
 	check_algo(&head_a, &head_b, arr_bub_sort, ac);
 	ft_print_node(head_a);
-	ft_print_node(head_b);
+	// ft_print_node(head_b);
 	free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);

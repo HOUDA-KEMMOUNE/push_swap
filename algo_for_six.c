@@ -14,33 +14,40 @@
 
 void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 {
+	printf("rani dkhalt hh\n");
 	int		start;
 	int		end;
+	int		tmp;
 	// int		size_b;
 	// int		mid;
 	int		max;
 	t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
-	if (!(*head_a) || !(*head_b))
+	if (!(*head_a))
 		return ;
 	start = 0;
 	ptr_a = *head_a;
 	ptr_b = *head_b;
 	// size_b = ft_lstsize(*head_b);
-	ac--;
+	// ac--;
+	tmp = ac;
+	printf("tmp --> %d\tac --> %d\n", tmp, ac);
 	if (ac <= 100)
-		end = ac / 6;
+		end = tmp / 6;
 	else if (ac <= 500)
-		end = ac / 14;
+		end = tmp / 14;
+	printf("start --> %d\tend --> %d\n", start, end);
 	/*--------------------Phase 1-----------------*/
-	while (ptr_a != NULL && end < ac)
+	while (ptr_a != NULL && end < ac && start < ac)
 	{
 		if (ptr_a->data <= arr[start])
 		{
 			pb(head_a, head_b);
 			rb(head_b);
 			write(1, "pb\nrb\n", 6);
+			end++;
+			start++;
 		}
 		else if (ptr_a->data <= arr[end])
 		{
@@ -51,6 +58,8 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 				sb(head_b);
 				write(1, "sb\n", 3);
 			}
+			end++;
+			start++;
 		}
 		else
 		{
@@ -67,7 +76,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 		if (ptr_b->data == max)
 		{
 			pa(head_a, head_b);
-			write(1, "pb\n", 3);
+			write(1, "pa\n", 3);
 		}
 		else
 		{

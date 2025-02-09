@@ -16,7 +16,7 @@ void	ft_stack_a(int arr_size, int* arr, t_stack *head_a)
 {
 	int		i;
 
-	i = 0;
+	i = 1;
 	while (i < arr_size)
 	{
 		add_node(head_a, arr[i]);

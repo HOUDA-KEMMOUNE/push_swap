@@ -75,7 +75,7 @@ int	*atoi_av(int ac, char *av[])
 		count = 0;
 		while (new_av[count])
 			count++;
-		arr = malloc(count * sizeof(int));
+		arr = malloc((count + 1) * sizeof(int));
 		if (!arr)
 		{
 			free_split(new_av);

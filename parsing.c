@@ -28,8 +28,10 @@ int	empty_arg(int ac, char *av[])
 	i = 1;
 	while (i < ac)
 	{
-		if (av[i][0] == '\0')
+		if (av[i][0] == '\0'){
+		write(1, "emptyarg\n", 6);
 			print_error();
+			}
 		i++;
 	}
 	return (0);

@@ -85,11 +85,12 @@ void	neg_and_pos(char **av, int ac)
 			j++;
 		while (av[i][j])
 		{
-			if (av[i][j] >= '0' && av[i][j] <= '9')
+			if ((av[i][j] >= '0' && av[i][j] <= '9')|| av[i][j]==' ')
 				j++;
-			else
+			else{
+			write(1, "neg pos\n", 6);
 				print_error();
-		}
+		}}
 		j = 0;
 		i++;
 	}

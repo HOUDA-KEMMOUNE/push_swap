@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-void	check_algo(t_stack **head_a, t_stack **head_b, int *arr, int ac)
+void	check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {
-	// int	size;
+	int	size;
 
 	if (!head_a)
 		return ;
-	ac--;
-	// size = ft_lstsize(*head_a);
-	if (ac == 2)
+	// ac--;
+	size = ft_lstsize(*head_a);
+	if (size == 2)
 		algo_for_two(head_a);
-	else if (ac == 3)
+	else if (size == 3)
 		algo_for_three(head_a);
-	else if (ac == 4 || ac == 5)
+	else if (size == 4 || size == 5)
 		algo_for_four_five(head_a, head_b);
-	else if (ac >= 6)
-		algo_for_six(head_a, head_b, arr, ac);
+	else if (size >= 6)
+		algo_for_six(head_a, head_b, arr, arr_size);
 	else
 		return ;
 }

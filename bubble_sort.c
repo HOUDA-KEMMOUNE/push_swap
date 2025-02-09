@@ -21,21 +21,20 @@ void	ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-int	*bubble_sort(int *arr, int ac)
+int	*bubble_sort(int *arr, int arr_size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	
-	if (!arr && ac <= 1)
+	if (!arr)
 		exit(1);
-	while (i < ac - 1)
+	while (i < arr_size - 1)
 	{
-		while (j < ac - i - 1)
+		while (j < arr_size - i - 1)
 		{
-			if (arr[j + 1] && arr[j] > arr[j + 1])
+			if (arr[j] > arr[j + 1])
 				ft_swap(&arr[j], &arr[j + 1]);
 			j++;
 		}

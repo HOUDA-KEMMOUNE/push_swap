@@ -20,17 +20,20 @@ char	**join_split_arg(int ac, char **av)
 	char	*join;
 	char	*tmp;
 	char	**new_av;
-	int		check_num;
 
 	i = 1;
-	(void)ac;
-	check_num = check_if_nbr(av, ac);
-	if (check_num == 0)
+	if (ac >= 2)
 	{
 		join = ft_strdup("");
 		while (av[i])
 		{
 			tmp = join;
+			if (i != 1)
+			{
+				join = ft_strjoin(tmp, " ");
+				free(tmp);
+				tmp = join;
+			}
 			join = ft_strjoin(tmp, av[i]);
 			free(tmp);
 			i++;
@@ -64,19 +67,22 @@ int	*atoi_av(int ac, char *av[])
 	char	**new_av;
 	int		*arr;
 	int		i;
-
+	int		count;
 
 	new_av = join_split_arg(ac, av);
 	if (new_av != NULL)
 	{
-		arr = malloc((ac) * sizeof(int));
+		count = 0;
+		while (new_av[count])
+			count++;
+		arr = malloc(count * sizeof(int));
 		if (!arr)
 		{
 			free_split(new_av);
 			return (NULL);
 		}
 		i = 0;
-		while (new_av[i] && i < ac)
+		while (new_av[i] && i < count)
 		{
 			arr[i] = ft_atoi(new_av[i]);
 			i++;
@@ -84,7 +90,6 @@ int	*atoi_av(int ac, char *av[])
 		free_split(new_av);
 		return (arr);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
 /*-------------end----------------*/

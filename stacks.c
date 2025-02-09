@@ -12,20 +12,17 @@
 
 #include "push_swap.h"
 
-void	ft_stack_a(int ac, char *av[], t_stack *head_a)
+void	ft_stack_a(int arr_size, int* arr, t_stack *head_a)
 {
-	int		*arr;
 	int		i;
 
-	arr = atoi_av(ac, av);
-	i = 1;
-	ac--;
-	while (i < ac)
+	i = 0;
+	while (i < arr_size)
 	{
 		add_node(head_a, arr[i]);
 		i++;
 	}
-	free(arr);
+	// free(arr);
 }
 
 void	ft_stack_b(t_stack **head_a, t_stack **head_b)

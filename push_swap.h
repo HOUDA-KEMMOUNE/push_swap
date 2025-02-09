@@ -55,7 +55,7 @@ t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);
 int			check_big_num(t_stack *head);
 int			check_small_num(t_stack *head);
-void		ft_stack_a(int ac, char *av[], t_stack *head_a);
+void		ft_stack_a(int arr_size, int* arr, t_stack *head_a);
 void		ft_stack_b(t_stack **head_a, t_stack **head_b);
 //-----------------actions-------------
 void		sa(t_stack **head);
@@ -70,7 +70,7 @@ void		rra(t_stack **head_a);
 void		rrb(t_stack **head_b);
 void		rrr(t_stack **head_a, t_stack **head_b);
 //------------------algos-----------------
-void		check_algo(t_stack **head_a, t_stack **head_b, int *arr, int ac);
+void		check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size);
 void		algo_for_two(t_stack **head_a);
 void		algo_for_three(t_stack **head_a);
 void		algo_for_four_five(t_stack **head_a, t_stack **head_b);

@@ -66,7 +66,7 @@ int	main(int ac, char *av[])
 	t_stack	*head_a;
 	t_stack	*head_b;
 	int		*arr;
-	int		*arr_bub_sort;
+	// int		*arr_bub_sort;
 	int		arr_size;
 	
 	check_errors(ac, av);
@@ -78,9 +78,9 @@ int	main(int ac, char *av[])
 	head_a = ft_lstnew(arr[0]);
 	head_b = NULL;
 	ft_stack_a(arr_size, arr, head_a);
-	arr_bub_sort = bubble_sort(arr, arr_size);
+	// arr_bub_sort = bubble_sort(arr, arr_size);
 	ft_print_node(head_a);
-	check_algo(&head_a, &head_b, arr_bub_sort, arr_size);
+	check_algo(&head_a, &head_b, arr, arr_size);
 	ft_print_node(head_a);
 	free(arr);
 	ft_lstclear(&head_a);

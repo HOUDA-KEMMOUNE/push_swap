@@ -12,28 +12,51 @@
 
 #include "push_swap.h"
 
+static int	*bubble_sort(int *arr, int arr_size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (!arr)
+		exit(1);
+	while (i < arr_size - 1)
+	{
+		while (j < arr_size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+				ft_swap(&arr[j], &arr[j + 1]);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (arr);
+}
+
 void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {
 	printf("rani dkhalt hh\n");
+	int		*bub_sort;
 	int		start;
 	int		end;
 	int		tmp;
-	// int		size_b;
-	// int		size_a;
-	// int		mid;
+	int		size_b;
+	int		size_a;
+	int		mid;
 	int		max;
 	t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
 	if (!(*head_a))
 		return ;
-	// (void)ac;
+	bub_sort = bubble_sort(arr, arr_size);
 	start = 0;
 	ptr_a = *head_a;
 	ptr_b = *head_b;
-	// size_b = ft_lstsize(*head_b);
-	// size_a = ft_lstsize(*head_a);
-	// ac--;
+	size_b = ft_lstsize(*head_b);
+	size_a = ft_lstsize(*head_a);
 	tmp = arr_size;
 	printf("tmp --> %d\tarr_size --> %d\n", tmp, arr_size);
 	if (arr_size <= 100)
@@ -72,7 +95,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	}
 	/*--------------end of Phase 1---------------*/
 	/*-----------------Phase 2-----------------*/
-	// mid = size_b / 2;
+	mid = size_b / 2;
 	while (ptr_b != NULL)
 	{
 		max = check_big_num(*head_a);

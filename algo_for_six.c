@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
+void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {
 	printf("rani dkhalt hh\n");
 	int		start;
@@ -27,22 +27,22 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int ac)
 
 	if (!(*head_a))
 		return ;
-	(void)ac;
+	// (void)ac;
 	start = 0;
 	ptr_a = *head_a;
 	ptr_b = *head_b;
 	// size_b = ft_lstsize(*head_b);
 	// size_a = ft_lstsize(*head_a);
 	// ac--;
-	tmp = ac;
-	printf("tmp --> %d\tac --> %d\n", tmp, ac);
-	if (ac <= 100)
+	tmp = arr_size;
+	printf("tmp --> %d\tarr_size --> %d\n", tmp, arr_size);
+	if (arr_size <= 100)
 		end = tmp / 6;
-	else if (ac <= 500)
+	else if (arr_size <= 500)
 		end = tmp / 14;
 	printf("start --> %d\tend --> %d\n", start, end);
 	/*--------------------Phase 1-----------------*/
-	while (ptr_a != NULL && end < ac && start < ac)
+	while (ptr_a != NULL && end < arr_size && start < arr_size)
 	{
 		if (ptr_a->data <= arr[start])
 		{

@@ -28,10 +28,8 @@ int	check_if_dup(char **av, int ac)
 			j = i + 1;
 			while (j < ac)
 			{
-				if (ft_strcmp(av[i], av[j]) == 0){
-					write(1, "dup\n", 5);
+				if (ft_strcmp(av[i], av[j]) == 0)
 					print_error();
-					}
 				j++;
 			}
 			i++;

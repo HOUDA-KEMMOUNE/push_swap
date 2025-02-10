@@ -43,6 +43,7 @@ int			check_if_dup(char **av, int ac);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_swap(int *a, int *b);
 void		check_errors(int ac, char *av[]);
+int			count_words_in_av(int ac, char **av);
 void		print_error(void);
 void		neg_and_pos(char **av, int ac);
 int			empty_arg(int ac, char *av[]);

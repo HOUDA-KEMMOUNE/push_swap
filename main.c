@@ -17,50 +17,6 @@ void	print_error(void)
 	write(1, "Error\n", 6);
 	exit (1);
 }
-// static int	ft_is_nbr(char c)
-// {
-// 	if ((c == '-') || (c == '+') || (c >= '0' && c <= '9'))
-// 		return (0);
-// 	return (1);
-// }
-
-// static int	check_space(char *s)
-// {
-// 	int	i;
-// 	// int	j;
-// 	// int	is_nbr;
-
-// 	i = 0;
-// 	// j = i++;
-// 	// is_nbr = ft_is_nbr(s[j]);
-// 	while (s[i])
-// 	{
-// 		if (s[i] == ' ' && ft_is_nbr(s[i++]) == 0)
-// 			return (0);
-// 		i++;
-// 	}
-// 	exit(1);
-// }
-
-// int	*check_av_one(char **av, int ac)
-// {
-// 	int		i;
-// 	int		space;
-// 	int		*new_arr;
-// 	// char	*join;
-// 	// char	*tmp;
-// 	char	**new_av;
-
-// 	i = 0;
-// 	space = check_space(av[1]);
-// 	// is_nbr = check_if_nbr(av, ac);
-// 	if (space == 0)
-// 	{
-// 		new_av = ft_split(av[1], ' ');
-// 		new_arr = atoi_av(2, new_av);
-// 	}
-	
-// }
 
 void	check_errors(int ac, char *av[])
 {
@@ -69,7 +25,7 @@ void	check_errors(int ac, char *av[])
 	empty_arg(ac, av);
 }
 
-static int	count_words_in_string(const char *str)
+static int	count_words(char *str)
 {
 	int	count;
 	int	in_word;
@@ -78,7 +34,7 @@ static int	count_words_in_string(const char *str)
 	in_word = 0;
 	while (*str)
 	{
-		if (*str != ' ' && !in_word)
+		if (*str != ' ' && in_word == 0)
 		{
 			in_word = 1;
 			count++;
@@ -97,10 +53,10 @@ int	count_words_in_av(int ac, char **av)
 	int	i;
 
 	total_words = 0;
-	i = 1; // Start from 1 to skip the program name (av[0])
+	i = 1;
 	while (i < ac)
 	{
-		total_words += count_words_in_string(av[i]);
+		total_words += count_words(av[i]);
 		i++;
 	}
 	return (total_words);
@@ -113,21 +69,14 @@ int	main(int ac, char *av[])
 	int		*arr_bub_sort;
 	int		arr_size;
 	
-
+	check_errors(ac, av);
 	arr = atoi_av(ac, av);
 	if (arr == NULL)
 		return (1);
 	arr_size = 0;
-	for(int i=0;i<3;i++){
-		printf("%d",arr[i]);
-	}
-	// while (arr[arr_size])
-	// 	arr_size++;
-	// check_errors(ac, av);
 	arr_size = count_words_in_av(ac,av);
 	head_a = ft_lstnew(arr[0]);
 	head_b = NULL;
-	// check_errors(ac, av);
 	ft_stack_a(arr_size, arr, head_a);
 	arr_bub_sort = bubble_sort(arr, arr_size);
 	ft_print_node(head_a);

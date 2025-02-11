@@ -59,7 +59,7 @@ int	ft_lstsize(t_stack *lst)
 }
 
 /*--------------ft_index---------------*/
-int	ft_index(t_stack *lst)
+void	ft_index(t_stack *lst)
 {
 	t_stack	*ptr;
 	int		i;

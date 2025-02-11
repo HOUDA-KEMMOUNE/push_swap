@@ -50,6 +50,7 @@ int			empty_arg(int ac, char *av[]);
 void		ft_print_node(t_stack *head);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
+void		ft_index(t_stack *lst);
 int			ft_lstsize(t_stack *lst);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);

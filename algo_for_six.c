@@ -43,10 +43,11 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	int		end;
 	int		tmp;
 	int		size_b;
-	int		size_a;
+	// int		size_a;
 	int		mid;
 	int		max;
-	int		big_data;
+	// int		last_data;
+	// t_stack	*last_node_b;
 	t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
@@ -57,7 +58,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	ptr_a = *head_a;
 	ptr_b = *head_b;
 	size_b = ft_lstsize(*head_b);
-	size_a = ft_lstsize(*head_a);
+	// size_a = ft_lstsize(*head_a);
 	tmp = arr_size;
 	printf("tmp --> %d\tarr_size --> %d\n", tmp, arr_size);
 	if (arr_size <= 100)
@@ -93,13 +94,17 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			ra(head_a);
 			write(1, "ra\n", 3);
 		}
+		ptr_a = ptr_a->next;
 	}
+	printf("rah khrajt man phase 1\n");
 	/*--------------end of Phase 1---------------*/
 	/*-----------------Phase 2-----------------*/
-	while (ptr_b != NULL)
+	while (ptr_b->next != NULL)
 	{
+		printf("rah dkhalt l phase 2\n");
 		mid = size_b / 2;
 		max = check_big_num(*head_a);
+		// last_node_b = ft_lstlast(head_b);
 		if (ptr_b->data == max && ptr_b->index > mid)
 	    {
 			if (ptr_b->index == 0)
@@ -109,22 +114,24 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			}
 			else
 			{
-				while (ptr_b->next != NULL)
+				if (ptr_b->index != 0)
 				{
-					if (ptr_b->index != 0)
-					{
-						rb(head_b);
-						write(1, "rb\n", 3);
-					}
-					else
-					{
-						pa(head_a, head_b);
-						write(1, "pa\n", 3);
-						break ;
-					}
-					ptr_b = ptr_b->next;
+					rb(head_b);
+					write(1, "rb\n", 3);
+				}
+				else
+				{
+					pa(head_a, head_b);
+					write(1, "pa\n", 3);
+					break ;
 				}
 			}
 		}
+		 else if (ptr_b->data == max && ptr_b->index < mid)
+	    {
+			rrb(head_b);
+			write(1, "rrb\n", 4);
+		}
+		ptr_b = ptr_b->next;
 	}
 }

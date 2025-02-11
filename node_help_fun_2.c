@@ -66,7 +66,7 @@ int	ft_index(t_stack *lst)
 
 	ptr = lst;
 	i = 0;
-	while (ptr->next != NULL)
+	while (ptr != NULL)
 	{
 		ptr->index = i;
 		i++;

@@ -100,17 +100,31 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	{
 		mid = size_b / 2;
 		max = check_big_num(*head_a);
-		if (ptr_b->data == max && max)
-			big_data = ptr_b->data;
-		// if (ptr_b->data == max)
-		// {
-		// 	pa(head_a, head_b);
-		// 	write(1, "pa\n", 3);
-		// }
-		// else
-		// {
-		// 	rrb(head_b);
-		// 	write(1, "rrb\n", 4);
-		// }
+		if (ptr_b->data == max && ptr_b->index > mid)
+	    {
+			if (ptr_b->index == 0)
+			{
+				pa(head_a, head_b);
+				write(1, "pa\n", 3);
+			}
+			else
+			{
+				while (ptr_b->next != NULL)
+				{
+					if (ptr_b->index != 0)
+					{
+						rb(head_b);
+						write(1, "rb\n", 3);
+					}
+					else
+					{
+						pa(head_a, head_b);
+						write(1, "pa\n", 3);
+						break ;
+					}
+					ptr_b = ptr_b->next;
+				}
+			}
+		}
 	}
 }

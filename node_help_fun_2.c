@@ -57,3 +57,21 @@ int	ft_lstsize(t_stack *lst)
 	}
 	return (count);
 }
+
+/*--------------ft_index---------------*/
+int	ft_index(t_stack *lst)
+{
+	t_stack	*ptr;
+	int		i;
+
+	ptr = lst;
+	i = 0;
+	while (ptr->next != NULL)
+	{
+		ptr->index = i;
+		i++;
+		ptr = ptr->next;
+	}
+}
+
+/*--------------end---------------*/

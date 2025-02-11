@@ -46,6 +46,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	int		size_a;
 	int		mid;
 	int		max;
+	int		big_data;
 	t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
@@ -95,19 +96,21 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	}
 	/*--------------end of Phase 1---------------*/
 	/*-----------------Phase 2-----------------*/
-	mid = size_b / 2;
 	while (ptr_b != NULL)
 	{
+		mid = size_b / 2;
 		max = check_big_num(*head_a);
-		if (ptr_b->data == max)
-		{
-			pa(head_a, head_b);
-			write(1, "pa\n", 3);
-		}
-		else
-		{
-			rrb(head_b);
-			write(1, "rrb\n", 4);
-		}
+		if (ptr_b->data == max && max)
+			big_data = ptr_b->data;
+		// if (ptr_b->data == max)
+		// {
+		// 	pa(head_a, head_b);
+		// 	write(1, "pa\n", 3);
+		// }
+		// else
+		// {
+		// 	rrb(head_b);
+		// 	write(1, "rrb\n", 4);
+		// }
 	}
 }

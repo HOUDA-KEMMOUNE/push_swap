@@ -37,17 +37,13 @@ static int	*bubble_sort(int *arr, int arr_size)
 
 void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {
-	printf("rani dkhalt hh\n");
 	int		*bub_sort;
 	int		start;
 	int		end;
 	int		tmp;
 	int		size_b;
-	// int		size_a;
 	int		mid;
 	int		max;
-	// int		last_data;
-	// t_stack	*last_node_b;
 	t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
@@ -58,17 +54,15 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	ptr_a = *head_a;
 	ptr_b = *head_b;
 	size_b = ft_lstsize(*head_b);
-	// size_a = ft_lstsize(*head_a);
 	tmp = arr_size;
-	printf("tmp --> %d\tarr_size --> %d\n", tmp, arr_size);
 	if (arr_size <= 100)
 		end = tmp / 6;
 	else if (arr_size <= 500)
 		end = tmp / 14;
-	printf("start --> %d\tend --> %d\n", start, end);
 	/*--------------------Phase 1-----------------*/
-	while (ptr_a != NULL && end < arr_size && start < arr_size)
+	while (ptr_a->next != NULL && end < arr_size && start < arr_size)
 	{
+		ptr_a = *head_a;
 		if (ptr_a->data <= bub_sort[start])
 		{
 			pb(head_a, head_b);
@@ -81,6 +75,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 		{
 			pb(head_a, head_b);
 			write(1, "pb\n", 3);
+			ptr_b = *head_b;
 			if (ptr_b->next->data > ptr_b->data)
 			{
 				sb(head_b);
@@ -99,7 +94,8 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	printf("rah khrajt man phase 1\n");
 	/*--------------end of Phase 1---------------*/
 	/*-----------------Phase 2-----------------*/
-	while (ptr_b->next != NULL)
+	ptr_b = *head_b;
+	while (ptr_b != NULL)
 	{
 		printf("rah dkhalt l phase 2\n");
 		mid = size_b / 2;

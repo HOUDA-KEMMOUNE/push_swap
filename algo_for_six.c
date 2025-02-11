@@ -67,7 +67,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	/*--------------------Phase 1-----------------*/
 	while (ptr_a != NULL && end < arr_size && start < arr_size)
 	{
-		if (ptr_a->data <= arr[start])
+		if (ptr_a->data <= bub_sort[start])
 		{
 			pb(head_a, head_b);
 			rb(head_b);
@@ -75,11 +75,11 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			end++;
 			start++;
 		}
-		else if (ptr_a->data <= arr[end])
+		else if (ptr_a->data <= bub_sort[end])
 		{
 			pb(head_a, head_b);
 			write(1, "pb\n", 3);
-			if ((*head_b)->next->data > (*head_b)->data)
+			if (ptr_b->next->data > ptr_b->data)
 			{
 				sb(head_b);
 				write(1, "sb\n", 3);

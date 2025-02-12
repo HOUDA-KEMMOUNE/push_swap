@@ -53,14 +53,13 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	start = 0;
 	ptr_a = *head_a;
 	ptr_b = *head_b;
-	size_b = ft_lstsize(*head_b);
 	tmp = arr_size;
 	if (arr_size <= 100)
 		end = tmp / 6;
 	else if (arr_size <= 500)
 		end = tmp / 14;
 	/*--------------------Phase 1-----------------*/
-	while (ptr_a->next != NULL && end < arr_size && start < arr_size)
+	while ((*head_a) != NULL && end < arr_size && start < arr_size)
 	{
 		ptr_a = *head_a;
 		if (ptr_a->data <= bub_sort[start])
@@ -89,7 +88,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			ra(head_a);
 			write(1, "ra\n", 3);
 		}
-		ptr_a = ptr_a->next;
+		// ptr_a = ptr_a->next;
 	}
 	printf("rah khrajt man phase 1\n");
 	/*--------------end of Phase 1---------------*/
@@ -98,6 +97,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	while (ptr_b != NULL)
 	{
 		printf("rah dkhalt l phase 2\n");
+		size_b = ft_lstsize(*head_b);
 		mid = size_b / 2;
 		max = check_big_num(*head_a);
 		// last_node_b = ft_lstlast(head_b);

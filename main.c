@@ -21,6 +21,7 @@ void	print_error(void)
 void	check_errors(int ac, char *av[])
 {
 	check_if_nbr(av, ac);
+	// check_len(av, ac);
 	check_if_dup(av, ac);
 	empty_arg(ac, av);
 }
@@ -46,7 +47,6 @@ static int	count_words(char *str)
 	return (count);
 }
 
-// Main function to count words in **av
 int	count_words_in_av(int ac, char **av)
 {
 	int	total_words;
@@ -61,6 +61,7 @@ int	count_words_in_av(int ac, char **av)
 	}
 	return (total_words);
 }
+
 int	main(int ac, char *av[])
 {
 	t_stack	*head_a;

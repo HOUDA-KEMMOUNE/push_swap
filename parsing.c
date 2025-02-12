@@ -63,4 +63,44 @@ int	check_if_dup(char **av, int ac)
 	return (0);
 }
 
+/*-------------------check_len----------------*/
+// static int	check_zero_one(const char *str)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		if (str[i] == '0' || str[i] == '1')
+// 			i++;
+// 		else
+// 			return (1);
+// 	}
+// 	return (0);
+// }
+
+// void	check_len(char **av, int ac)
+// {
+// 	size_t		len;
+// 	int			zero_one_res;
+// 	int			i;
+// 	char		*str;
+	
+// 	check_if_nbr(av, ac);
+// 	// if (ac == 1)
+// 	// 	exit(1);
+// 	i = 1;
+// 	ac--;
+// 	// len = ft_strlen(str);
+// 	// zero_one_res = check_zero_one(str);
+// 	while (i < ac)
+// 	{
+// 		str = av[i]; 
+// 		len = ft_strlen(str);
+// 		zero_one_res = check_zero_one(str);
+// 		if ((len > 11) && (zero_one_res == 1))
+// 			print_error();
+// 		i++;
+// 	}
+// }
 /*-------------------end--------------------*/

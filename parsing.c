@@ -21,6 +21,7 @@ int	check_if_nbr(char **av, int ac)
 	return (0);
 }
 
+/*-------------empty_arg----------------*/
 int	empty_arg(int ac, char *av[])
 {
 	int	i;
@@ -34,4 +35,32 @@ int	empty_arg(int ac, char *av[])
 	}
 	return (0);
 }
+
+/*-------------check_if_dup----------------*/
+int	check_if_dup(char **av, int ac)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 1;
+	if (ac <= 1)
+		exit(1);
+	else
+	{
+		while (i < ac)
+		{
+			j = i + 1;
+			while (j < ac)
+			{
+				if (ft_strcmp(av[i], av[j]) == 0)
+					print_error();
+				j++;
+			}
+			i++;
+		}
+	}
+	return (0);
+}
+
 /*-------------------end--------------------*/

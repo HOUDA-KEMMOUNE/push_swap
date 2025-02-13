@@ -21,7 +21,7 @@ void	print_error(void)
 void	check_errors(int ac, char *av[])
 {
 	check_if_nbr(av, ac);
-	// check_len(av, ac);
+	check_len(av, ac);
 	check_if_dup(av, ac);
 	empty_arg(ac, av);
 }

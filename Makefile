@@ -22,7 +22,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 SRC = bubble_sort.c ft_split.c main.c stacks.c swaps.c utils3.c ft_print_node.c \
 	main_help_fun.c pushes.c stack_helper.c utils2.c utils4.c node_help_fun.c rerotates.c algos.c \
-	check_algo.c node_help_fun_2.c algo_for_three_cases.c algo_for_six.c 
+	check_algo.c node_help_fun_2.c algo_for_three_cases.c algo_for_six.c check_len.c parsing.c rotates.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $(OBJ)
 
 $(EXE): $(SRC)
-	$(CC) *.c $(CFLAGS)
+	$(CC) $(SRC) $(CFLAGS)
 
 clean:
 	rm -rf *.o

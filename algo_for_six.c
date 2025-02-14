@@ -44,14 +44,14 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	int		size_b;
 	int		mid;
 	int		max;
-	t_stack	*ptr_a;
+	// t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
 	if (!(*head_a))
 		return ;
 	bub_sort = bubble_sort(arr, arr_size);
 	start = 0;
-	ptr_a = *head_a;
+	// ptr_a = *head_a;
 	ptr_b = *head_b;
 	tmp = arr_size;
 	if (arr_size <= 100)
@@ -61,8 +61,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	/*--------------------Phase 1-----------------*/
 	while ((*head_a) != NULL && end < arr_size && start < arr_size)
 	{
-		ptr_a = *head_a;
-		if (ptr_a->data <= bub_sort[start])
+		if ((*head_a)->data <= bub_sort[start])
 		{
 			pb(head_a, head_b);
 			rb(head_b);
@@ -70,12 +69,12 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			end++;
 			start++;
 		}
-		else if (ptr_a->data <= bub_sort[end])
+		else if ((*head_a)->data <= bub_sort[end])
 		{
 			pb(head_a, head_b);
 			write(1, "pb\n", 3);
 			ptr_b = *head_b;
-			if (ptr_b->next->data > ptr_b->data)
+			if ((*head_b)->next != NULL && (*head_b)->next->data > (*head_b)->data)
 			{
 				sb(head_b);
 				write(1, "sb\n", 3);
@@ -88,46 +87,31 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 			ra(head_a);
 			write(1, "ra\n", 3);
 		}
-		// ptr_a = ptr_a->next;
 	}
-	printf("rah khrajt man phase 1\n");
 	/*--------------end of Phase 1---------------*/
 	/*-----------------Phase 2-----------------*/
-	ptr_b = *head_b;
-	while (ptr_b != NULL)
-	{
-		printf("rah dkhalt l phase 2\n");
-		size_b = ft_lstsize(*head_b);
-		mid = size_b / 2;
-		max = check_big_num(*head_a);
-		// last_node_b = ft_lstlast(head_b);
-		if (ptr_b->data == max && ptr_b->index > mid)
-	    {
-			if (ptr_b->index == 0)
-			{
-				pa(head_a, head_b);
-				write(1, "pa\n", 3);
-			}
-			else
-			{
-				if (ptr_b->index != 0)
-				{
-					rb(head_b);
-					write(1, "rb\n", 3);
-				}
-				else
-				{
-					pa(head_a, head_b);
-					write(1, "pa\n", 3);
-					break ;
-				}
-			}
-		}
-		 else if (ptr_b->data == max && ptr_b->index < mid)
-	    {
-			rrb(head_b);
-			write(1, "rrb\n", 4);
-		}
-		ptr_b = ptr_b->next;
-	}
+	size_b = ft_lstsize(*head_b);
+	while (*head_b != NULL)
+    {
+        max = check_big_num(*head_b);
+        ptr_b = *head_b;
+        mid = size_b / 2;
+        while (ptr_b->data != max)
+        {
+            if (ptr_b->index <= mid)
+            {
+                rb(head_b);
+                write(1, "rb\n", 3);
+            }
+            else
+            {
+                rrb(head_b);
+                write(1, "rrb\n", 4);
+            }
+            ptr_b = *head_b;
+        }
+        pa(head_a, head_b);
+        write(1, "pa\n", 3);
+        size_b--;
+    }
 }

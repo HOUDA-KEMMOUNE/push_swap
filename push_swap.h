@@ -35,7 +35,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strdup(const char *s1);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 int			check_if_nbr(char **av, int ac);
-void		check_len(char **av, int ac);
 char		**join_split_arg(int ac, char **av);
 void		free_split(char **str_str);
 int			*atoi_av(int ac, char *av[]);

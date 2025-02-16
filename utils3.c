@@ -76,6 +76,17 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
+	// size_t	len = ft_strlen(str);
+	int j = 0;
+	while (str[j] && j < 12)
+	{
+		if (str[j] == '9')
+			j++;
+		else
+			break ;
+		// printf("test\n");
+		print_error();
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');

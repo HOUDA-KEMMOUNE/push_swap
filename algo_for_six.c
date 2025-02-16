@@ -55,11 +55,11 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	ptr_b = *head_b;
 	tmp = arr_size;
 	if (arr_size <= 100)
-		end = tmp / 6;
+		end = tmp / 13;
 	else if (arr_size <= 500)
-		end = tmp / 14;
+		end = tmp / 33;
 	/*--------------------Phase 1-----------------*/
-	while ((*head_a) != NULL && end < arr_size && start < arr_size)
+	while ((*head_a) != NULL && end < arr_size)
 	{
 		if ((*head_a)->data <= bub_sort[start])
 		{

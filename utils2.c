@@ -12,6 +12,15 @@
 
 #include "push_swap.h"
 
+/*-------------------------ft_swap------------------------*/
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 /*-------------------------ft_strlen------------------------*/
 
 size_t	ft_strlen(const char *s)

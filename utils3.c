@@ -65,6 +65,8 @@ int	ft_atoi(const char *str)
 	int			i;
 	int			sign;
 	long long	result;
+	int			j;
+	size_t		len;
 
 	i = 0;
 	sign = 1;
@@ -76,16 +78,19 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	// size_t	len = ft_strlen(str);
-	int j = 0;
-	while (str[j] && j < 12)
+	len = ft_strlen(str);
+	j = 0;
+	if (len > 12)
 	{
-		if (str[j] == '9')
-			j++;
-		else
-			break ;
-		// printf("test\n");
-		print_error();
+		while (str[j] && j < 12)
+		{
+			if (str[j] == '9')
+				j++;
+			else
+				break ;
+			printf("99999999999999\n");
+			print_error();
+		}
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
@@ -94,7 +99,11 @@ int	ft_atoi(const char *str)
 	}
 	result = result * sign;
 	if (result < INT_MIN || result > INT_MAX)
-		print_error();
+	{
+		printf("MIN/MAX\n");
+		exit (1);
+	}
+		// print_error();
 	return (result);
 }
 

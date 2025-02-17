@@ -35,6 +35,15 @@ static int	*bubble_sort(int *arr, int arr_size)
 	return (arr);
 }
 
+static void	incr_segment(int *start, int *end, int size)
+{
+	if (*end < size - 1)
+		(*end)++;
+	if (*start < size - 2)
+		(*start)++;
+}
+
+
 void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {
 	int		*bub_sort;
@@ -55,19 +64,18 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	ptr_b = *head_b;
 	tmp = arr_size;
 	if (arr_size <= 100)
-		end = tmp / 6;
-	else
 		end = tmp / 14;
+	else
+		end = tmp / 33;
 	/*--------------------Phase 1-----------------*/
-	while ((*head_a) != NULL && end < arr_size && start < arr_size)
+	while ((*head_a) != NULL && end < arr_size)
 	{
 		if ((*head_a)->data <= bub_sort[start])
 		{
 			pb(head_a, head_b);
 			rb(head_b);
 			write(1, "pb\nrb\n", 6);
-			end++;
-			start++;
+			incr_segment(&start, &end, arr_size);
 		}
 		else if ((*head_a)->data <= bub_sort[end])
 		{
@@ -79,8 +87,7 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 				sb(head_b);
 				write(1, "sb\n", 3);
 			}
-			end++;
-			start++;
+			incr_segment(&start, &end, arr_size);
 		}
 		else
 		{

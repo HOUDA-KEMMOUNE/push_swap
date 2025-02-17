@@ -47,14 +47,12 @@ static void	phase_one(t_stack **head_a, t_stack **head_b, int *bub_sort, int arr
 {
 	int		start;
 	int		end;
-	int		tmp;
 
 	start = 0;
-	tmp = arr_size;
 	if (arr_size <= 100)
-		end = tmp / 14;
+		end = arr_size / 14;
 	else
-		end = tmp / 33;
+		end = arr_size / 33;
 	while ((*head_a) != NULL && end < arr_size)
 	{
 		if ((*head_a)->data <= bub_sort[start])
@@ -82,60 +80,13 @@ static void	phase_one(t_stack **head_a, t_stack **head_b, int *bub_sort, int arr
 		}
 	}
 }
-
-void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
+static void	phase_two(t_stack **head_a, t_stack **head_b)
 {
-	int		*bub_sort;
-	// int		start;
-	// int		end;
-	// int		tmp;
 	int		size_b;
 	int		mid;
 	int		max;
-	// t_stack	*ptr_a;
 	t_stack	*ptr_b;
 
-	if (!(*head_a))
-		return ;
-	bub_sort = bubble_sort(arr, arr_size);
-	phase_one(head_a, head_b, bub_sort, arr_size);
-	// start = 0;
-	// ptr_b = *head_b;
-	// tmp = arr_size;
-	// if (arr_size <= 100)
-	// 	end = tmp / 14;
-	// else
-	// 	end = tmp / 33;
-	/*--------------------Phase 1-----------------*/
-	// while ((*head_a) != NULL && end < arr_size)
-	// {
-	// 	if ((*head_a)->data <= bub_sort[start])
-	// 	{
-	// 		pb(head_a, head_b);
-	// 		rb(head_b);
-	// 		write(1, "pb\nrb\n", 6);
-	// 		incr_segment(&start, &end, arr_size);
-	// 	}
-	// 	else if ((*head_a)->data <= bub_sort[end])
-	// 	{
-	// 		pb(head_a, head_b);
-	// 		write(1, "pb\n", 3);
-	// 		ptr_b = *head_b;
-	// 		if ((*head_b)->next != NULL && (*head_b)->next->data > (*head_b)->data)
-	// 		{
-	// 			sb(head_b);
-	// 			write(1, "sb\n", 3);
-	// 		}
-	// 		incr_segment(&start, &end, arr_size);
-	// 	}
-	// 	else
-	// 	{
-	// 		ra(head_a);
-	// 		write(1, "ra\n", 3);
-	// 	}
-	// }
-	/*--------------end of Phase 1---------------*/
-	/*-----------------Phase 2-----------------*/
 	size_b = ft_lstsize(*head_b);
 	while (*head_b != NULL)
     {
@@ -160,4 +111,15 @@ void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
         write(1, "pa\n", 3);
         size_b--;
     }
+}
+
+void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
+{
+	int		*bub_sort;
+
+	if (!(*head_a))
+		return ;
+	bub_sort = bubble_sort(arr, arr_size);
+	phase_one(head_a, head_b, bub_sort, arr_size);
+	phase_two(head_a, head_b);
 }

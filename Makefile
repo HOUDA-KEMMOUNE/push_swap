@@ -12,7 +12,7 @@
 
 NAME = push_swap.a
 
-EXE = a.out
+EXE = push_swap
 
 # ARCH = libft/libft.a
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $(OBJ)
 
 $(EXE): $(SRC)
-	$(CC) $(SRC) $(CFLAGS)
+	$(CC) $(SRC) $(CFLAGS) -o $(EXE)
 
 clean:
 	rm -rf *.o

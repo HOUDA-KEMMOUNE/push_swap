@@ -43,16 +43,17 @@ static void	incr_segment(int *start, int *end, int size)
 		(*start)++;
 }
 
-static void	phase_one(t_stack **head_a, t_stack **head_b, int *bub_sort, int arr_size)
+static void	phase_one(t_stack **head_a, t_stack **head_b,
+int *bub_sort, int arr_size)
 {
 	int		start;
 	int		end;
 
 	start = 0;
 	if (arr_size <= 100)
-		end = arr_size / 14;
+		end = arr_size / 6;
 	else
-		end = arr_size / 33;
+		end = arr_size / 35;
 	while ((*head_a) != NULL && end < arr_size)
 	{
 		if ((*head_a)->data <= bub_sort[start])
@@ -66,7 +67,8 @@ static void	phase_one(t_stack **head_a, t_stack **head_b, int *bub_sort, int arr
 		{
 			pb(head_a, head_b);
 			write(1, "pb\n", 3);
-			if ((*head_b)->next != NULL && (*head_b)->next->data > (*head_b)->data)
+			if ((*head_b)->next != NULL
+				&& (*head_b)->next->data > (*head_b)->data)
 			{
 				sb(head_b);
 				write(1, "sb\n", 3);
@@ -74,10 +76,7 @@ static void	phase_one(t_stack **head_a, t_stack **head_b, int *bub_sort, int arr
 			incr_segment(&start, &end, arr_size);
 		}
 		else
-		{
 			ra(head_a);
-			write(1, "ra\n", 3);
-		}
 	}
 }
 static void	phase_two(t_stack **head_a, t_stack **head_b)

@@ -23,6 +23,7 @@ void	ra(t_stack **head_a)
 	new_a = ft_lstnew(ptr_a->data);
 	ft_lstadd_back(head_a, new_a);
 	*head_a = ptr_a->next;
+	write(1, "ra\n", 3);
 	free(ptr_a);
 }
 

@@ -66,19 +66,21 @@ int	main(int ac, char *av[])
 	t_stack	*head_a;
 	t_stack	*head_b;
 	int		*arr;
-	// int		*arr_bub_sort;
 	int		arr_size;
 	
 	check_errors(ac, av);
-	arr = atoi_av(ac, av);
+	printf("ac-->%d\n", ac);
+	printf("%s\n", av[1]);
+	arr = atoi_av(av);
+	// printf("test1\n");
 	if (arr == NULL)
 		return (1);
+	// printf("test2\n");
 	arr_size = 0;
 	arr_size = count_words_in_av(ac,av);
 	head_a = ft_lstnew(arr[0]);
 	head_b = NULL;
 	ft_stack_a(arr_size, arr, head_a);
-	// arr_bub_sort = bubble_sort(arr, arr_size);
 	ft_print_node(head_a);
 	check_algo(&head_a, &head_b, arr, arr_size);
 	ft_print_node(head_a);

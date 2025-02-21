@@ -15,8 +15,6 @@
 /*-------------check_if_nbr----------------*/
 int	check_if_nbr(char **av, int ac)
 {
-	if (ac <= 1)
-		exit(1);
 	neg_and_pos(av, ac);
 	return (0);
 }
@@ -25,16 +23,27 @@ int	check_if_nbr(char **av, int ac)
 int	empty_arg(int ac, char *av[])
 {
 	int	i;
+	int	j;
 
 	i = 1;
+	j = 0;
 	while (i < ac)
 	{
 		if (av[i][0] == '\0')
 		{
-			printf("Empty arg\n");
-			exit (1);
+			printf("empty_arg\n");
+			exit(1);
 		}
 			// print_error();
+		while (av[i][j])
+		{
+			if (av[i][j] == ' ')
+				j++;
+			else
+				break;
+		}
+		if (av[i][j] == '\0')
+			print_error();
 		i++;
 	}
 	return (0);
@@ -49,9 +58,6 @@ int	check_if_dup(char **av, int ac)
 	int	second_num;
 
 	i = 1;
-	// j = 1;
-	if (ac <= 1)
-		exit(1);
 	while (i < ac)
 	{
 		first_num = atoi(av[i]);
@@ -61,8 +67,8 @@ int	check_if_dup(char **av, int ac)
 			second_num = ft_atoi(av[j]);
 			if (first_num == second_num)
 			{
-				printf("Check if dup\n");
-				exit (1);
+				printf("check_if_dup\n");
+				exit(1);
 			}
 				// print_error();
 			j++;

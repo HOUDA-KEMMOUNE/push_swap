@@ -21,7 +21,6 @@ void	print_error(void)
 void	check_errors(int ac, char *av[])
 {
 	check_if_nbr(av, ac);
-	check_if_dup(av, ac);
 	empty_arg(ac, av);
 }
 
@@ -68,14 +67,12 @@ int	main(int ac, char *av[])
 	int		*arr;
 	int		arr_size;
 	
+	if (ac == 1)
+		return (0);
 	check_errors(ac, av);
-	printf("ac-->%d\n", ac);
-	printf("%s\n", av[1]);
 	arr = atoi_av(av);
-	// printf("test1\n");
 	if (arr == NULL)
 		return (1);
-	// printf("test2\n");
 	arr_size = 0;
 	arr_size = count_words_in_av(ac,av);
 	head_a = ft_lstnew(arr[0]);

@@ -37,6 +37,7 @@ char	**join_split_arg(char **av)
 		i++;
 	}
 	new_av = ft_split(join, ' ');
+	i = 0;
 	free(join);
 	return (new_av);
 }
@@ -72,7 +73,7 @@ int	*atoi_av(char *av[])
 		while (new_av[count])
 			count++;
 		check_if_dup(new_av, count);
-		arr = malloc((count + 1) * sizeof(int));
+		arr = malloc((count) * sizeof(int));
 		if (!arr)
 		{
 			free_split(new_av);

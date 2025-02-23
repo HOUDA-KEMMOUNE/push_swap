@@ -78,19 +78,9 @@ static void	size_for_four_five(t_stack **head_a, t_stack **head_b)
 
 void	algo_for_four_five(t_stack **head_a, t_stack **head_b)
 {
-	t_stack	*ptr_a;
-
 	if (!(*head_a) && !(*head_b))
 		return ;
-	ptr_a = *head_a;
-	while (ptr_a != NULL && ptr_a->next != NULL)
-	{
-		if (ptr_a->data > ptr_a->next->data)
-			break ;
-		ptr_a = ptr_a->next;
-	}
-	if (ptr_a == NULL || ptr_a->next == NULL)
-		exit(0);
+	is_sorted(head_a);
 	size_for_four_five(head_a, head_b);
 	algo_for_three(head_a);
 	while ((*head_b) != NULL)

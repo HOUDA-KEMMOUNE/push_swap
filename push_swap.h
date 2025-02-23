@@ -26,6 +26,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+char	**ft_free_(char **res);
+
 int			ft_atoi(const char *str);
 char		**ft_split(const char *str, char c);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -51,6 +53,7 @@ void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_index(t_stack *lst);
 int			ft_lstsize(t_stack *lst);
+void		is_sorted(t_stack **head_a);
 void		add_node(t_stack *head, int new_data);
 t_stack		*ft_lstnew(int content);
 void		ft_lstclear(t_stack **lst);

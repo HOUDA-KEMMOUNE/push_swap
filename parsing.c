@@ -30,11 +30,7 @@ int	empty_arg(int ac, char *av[])
 	while (i < ac)
 	{
 		if (av[i][0] == '\0')
-		{
-			printf("empty_arg\n");
-			exit(1);
-		}
-			// print_error();
+			print_error();
 		while (av[i][j])
 		{
 			if (av[i][j] == ' ')
@@ -57,25 +53,33 @@ int	check_if_dup(char **av, int ac)
 	int	first_num;
 	int	second_num;
 
-	i = 1;
+	i = 0;
 	while (i < ac)
 	{
-		first_num = atoi(av[i]);
+		first_num = ft_atoi(av[i]);
 		j = i + 1;
 		while (j < ac)
 		{
 			second_num = ft_atoi(av[j]);
 			if (first_num == second_num)
-			{
-				printf("check_if_dup\n");
-				exit(1);
-			}
-				// print_error();
+				print_error();
 			j++;
 		}
 		i++;
 	}
 	return (0);
 }
+char	**ft_free_(char **res)
+{
+	int i;
 
+	i = 0;
+	while (res[i])
+	{
+		free (res[i]);
+		i++;
+	}
+	free (res);
+	return (NULL);
+}
 /*-------------------end--------------------*/

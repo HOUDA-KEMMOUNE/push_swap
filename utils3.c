@@ -88,7 +88,6 @@ int	ft_atoi(const char *str)
 				j++;
 			else
 				break ;
-			printf("99999999999999\n");
 			print_error();
 		}
 	}
@@ -99,11 +98,7 @@ int	ft_atoi(const char *str)
 	}
 	result = result * sign;
 	if (result < INT_MIN || result > INT_MAX)
-	{
-		printf("MIN/MAX\n");
-		exit (1);
-	}
-		// print_error();
+		print_error();
 	return (result);
 }
 

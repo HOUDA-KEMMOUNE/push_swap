@@ -24,10 +24,3 @@ void	ft_stack_a(int arr_size, int* arr, t_stack *head_a)
 	}
 	// free(arr);
 }
-
-void	ft_stack_b(t_stack **head_a, t_stack **head_b)
-{
-	printf("//stack B\n");
-	pb(head_a, head_b);
-	ft_print_node(*head_b);
-}

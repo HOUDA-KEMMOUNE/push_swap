@@ -42,6 +42,17 @@ static void	incr_segment(int *start, int *end, int size)
 	if (*start < size - 2)
 		(*start)++;
 }
+static int	ft_end(int arr_size)
+{
+	int	end;
+
+	end = 0;
+	if (arr_size <= 100)
+		end = arr_size / 6;
+	else
+		end = arr_size / 35;
+	return (end);
+}
 
 static void	phase_one(t_stack **head_a, t_stack **head_b,
 int *bub_sort, int arr_size)
@@ -51,52 +62,27 @@ int *bub_sort, int arr_size)
 
 	start = 0;
 	is_sorted(head_a);
-	if (arr_size <= 100)
-		end = arr_size / 6;
-	else
-		end = arr_size / 35;
+	end = ft_end(arr_size);
 	while ((*head_a) != NULL && end < arr_size)
 	{
 		if ((*head_a)->data <= bub_sort[start])
 		{
 			pb(head_a, head_b);
 			rb(head_b);
-			write(1, "pb\nrb\n", 6);
 			incr_segment(&start, &end, arr_size);
 		}
 		else if ((*head_a)->data <= bub_sort[end])
 		{
 			pb(head_a, head_b);
-			write(1, "pb\n", 3);
 			if ((*head_b)->next != NULL
 				&& (*head_b)->next->data > (*head_b)->data)
-			{
 				sb(head_b);
-				write(1, "sb\n", 3);
-			}
 			incr_segment(&start, &end, arr_size);
 		}
 		else
 			ra(head_a);
 	}
 }
-
-// static int max_index(t_stack *b, int max)
-// {
-// 	t_stack *tmp;
-// 	int	i;
-// 	tmp = b;
-// // printf("%d\n", tmp->data);
-// 	i = 0;
-// 	while (tmp)
-// 	{
-// 		if (tmp->data == max)
-// 			return (i);
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	return (0);
-// }
 
 static void	init_index(t_stack *lst)
 {
@@ -150,39 +136,6 @@ static void	phase_two(t_stack **a, t_stack **b)
 		write(1, "pa\n", 3);
 	}
 }
-
-// static void	phase_two(t_stack **head_a, t_stack **head_b)
-// {
-// 	int		size_b;
-// 	int		mid;
-// 	int		max;
-// 	t_stack	*ptr_b;
-
-// 	size_b = ft_lstsize(*head_b);
-// 	while (*head_b != NULL && size_b > 0)
-//     {
-//         max = check_big_num(*head_b);
-//         ptr_b = *head_b;
-//         mid = size_b / 2;
-//         while (ptr_b->data != max)
-//         {
-//             if (ptr_b->index < mid)
-//             {
-//                 rb(head_b);
-//                 write(1, "rb\n", 3);
-//             }
-//             else
-//             {
-//                 rrb(head_b);
-//                 write(1, "rrb\n", 4);
-//             }
-//             ptr_b = *head_b;
-//         }
-//         pa(head_a, head_b);
-//         write(1, "pa\n", 3);
-//         size_b--;
-//     }
-// }
 
 void	algo_for_six(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 {

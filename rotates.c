@@ -38,6 +38,7 @@ void	rb(t_stack **head_b)
 	new_b = ft_lstnew(ptr_b->data);
 	ft_lstadd_back(head_b, new_b);
 	*head_b = ptr_b->next;
+	write(1, "rb\n", 3);
 	free(ptr_b);
 }
 
@@ -49,4 +50,5 @@ void	rr(t_stack **head_a, t_stack **head_b)
 		return ;
 	ra(head_a);
 	rb(head_b);
+	write(1, "rr\n", 3);
 }

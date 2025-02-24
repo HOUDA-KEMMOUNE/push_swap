@@ -84,8 +84,5 @@ void	algo_for_four_five(t_stack **head_a, t_stack **head_b)
 	size_for_four_five(head_a, head_b);
 	algo_for_three(head_a);
 	while ((*head_b) != NULL)
-	{
 		pa(head_a, head_b);
-		write(1, "pa\n", 3);
-	}
 }

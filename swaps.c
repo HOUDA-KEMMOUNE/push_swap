@@ -20,6 +20,7 @@ void	sa(t_stack **head_a)
 		return ;
 	ptr = *head_a;
 	ft_swap(&(ptr->data), &(ptr->next->data));
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **head_b)
@@ -30,6 +31,7 @@ void	sb(t_stack **head_b)
 		return ;
 	ptr = *head_b;
 	ft_swap(&(ptr->data), &(ptr->next->data));
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **head_a, t_stack **head_b)
@@ -40,4 +42,5 @@ void	ss(t_stack **head_a, t_stack **head_b)
 		return ;
 	sa(head_a);
 	sb(head_b);
+	write(1, "ss\n", 3);
 }

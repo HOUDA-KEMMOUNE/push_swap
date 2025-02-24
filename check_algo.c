@@ -33,7 +33,6 @@ void	check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 
 	if (!head_a)
 		return ;
-	// ac--;
 	size = ft_lstsize(*head_a);
 	if (size == 2)
 		algo_for_two(head_a);

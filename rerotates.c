@@ -30,6 +30,7 @@ void	rra(t_stack **head_a)
 	last = ptr_a;
 	prev->next = NULL;
 	last->next = *head_a;
+	write(1, "rra\n", 4);
 	*head_a = last;
 }
 
@@ -51,6 +52,7 @@ void	rrb(t_stack **head_b)
 	last = ptr_b;
 	prev->next = NULL;
 	last->next = *head_b;
+	write(1, "rrb\n", 4);
 	*head_b = last;
 }
 
@@ -62,4 +64,5 @@ void	rrr(t_stack **head_a, t_stack **head_b)
 		return ;
 	rra(head_a);
 	rrb(head_b);
+	write(1, "rrr\n", 4);
 }

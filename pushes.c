@@ -23,6 +23,7 @@ void	pb(t_stack **head_a, t_stack **head_b)
 	new_b = ft_lstnew(ptr_a->data);
 	ft_lstadd_front(head_b, new_b);
 	*head_a = ptr_a->next;
+	write(1, "pb\n", 3);
 	free(ptr_a);
 }
 
@@ -37,5 +38,6 @@ void	pa(t_stack **head_a, t_stack **head_b)
 	new_a = ft_lstnew(ptr_b->data);
 	ft_lstadd_front(head_a, new_a);
 	*head_b = ptr_b->next;
+	write(1, "pa\n", 3);
 	free(ptr_b);
 }

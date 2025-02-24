@@ -57,7 +57,18 @@ void	free_split(char **str_str)
 	}
 	free(str_str);
 }
+
 /*-------------atoi_av---------------*/
+int	help_atoi_av(char **new_av)
+{
+	int	count;
+
+	count = 0;
+	while (new_av[count])
+		count++;
+	check_if_dup(new_av, count);
+	return (count);
+}
 
 int	*atoi_av(char *av[])
 {
@@ -69,10 +80,7 @@ int	*atoi_av(char *av[])
 	new_av = join_split_arg(av);
 	if (new_av != NULL)
 	{
-		count = 0;
-		while (new_av[count])
-			count++;
-		check_if_dup(new_av, count);
+		count = help_atoi_av(new_av);
 		arr = malloc((count) * sizeof(int));
 		if (!arr)
 		{

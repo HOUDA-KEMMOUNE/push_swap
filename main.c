@@ -66,7 +66,7 @@ int	main(int ac, char *av[])
 	t_stack	*head_b;
 	int		*arr;
 	int		arr_size;
-	
+
 	if (ac == 1)
 		return (0);
 	check_errors(ac, av);
@@ -74,7 +74,7 @@ int	main(int ac, char *av[])
 	if (arr == NULL)
 		return (1);
 	arr_size = 0;
-	arr_size = count_words_in_av(ac,av);
+	arr_size = count_words_in_av(ac, av);
 	head_a = ft_lstnew(arr[0]);
 	head_b = NULL;
 	ft_stack_a(arr_size, arr, head_a);

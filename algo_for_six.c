@@ -35,24 +35,13 @@ static int	*bubble_sort(int *arr, int arr_size)
 	return (arr);
 }
 
-static void	incr_segment(int *start, int *end, int size)
-{
-	if (*end < size - 1)
-		(*end)++;
-	if (*start < size - 2)
-		(*start)++;
-}
-static int	ft_end(int arr_size)
-{
-	int	end;
-
-	end = 0;
-	if (arr_size <= 100)
-		end = arr_size / 6;
-	else
-		end = arr_size / 35;
-	return (end);
-}
+// static void	incr_segment(int *start, int *end, int size)
+// {
+// 	if (*end < size - 1)
+// 		(*end)++;
+// 	if (*start < size - 2)
+// 		(*start)++;
+// }
 
 static void	phase_one(t_stack **head_a, t_stack **head_b,
 int *bub_sort, int arr_size)
@@ -83,34 +72,6 @@ int *bub_sort, int arr_size)
 			ra(head_a);
 	}
 }
-
-static void	init_index(t_stack *lst)
-{
-	int	i;
-
-	i = 0;
-	while (lst)
-	{
-		lst->index = i;
-		lst = lst->next;
-		i++;
-	}
-}
-static t_stack	*big_node(t_stack *lst)
-{
-	t_stack	*max;
-
-	init_index(lst);
-	max = lst;
-	while (lst)
-	{
-		if (lst->next && max->data < lst->next->data)
-			max = lst->next;
-		lst = lst->next;
-	}
-	return (max);
-}
-
 
 static void	phase_two(t_stack **a, t_stack **b)
 {

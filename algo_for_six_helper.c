@@ -20,7 +20,7 @@ int	ft_end(int arr_size)
 	if (arr_size <= 100)
 		end = arr_size / 6;
 	else
-		end = arr_size / 35;
+		end = arr_size / 14;
 	return (end);
 }
 

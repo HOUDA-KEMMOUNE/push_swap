@@ -80,18 +80,18 @@ static void	helper_fct2(t_stack **a, char **sp)
 	free_split(sp);
 	exit(0);
 }
-// static void ft_print_nodes(t_stack *lst)
-// {
-// 	t_stack *ptr;
+static void ft_print_nodes(t_stack *lst)
+{
+	t_stack *ptr;
 
-// 	ptr = lst;
-// 	while (ptr != NULL)
-// 	{
-// 		printf("%d --> ", ptr->data);
-// 		ptr = ptr->next;
-// 	}
-// 	printf("NULL\n");
-// }
+	ptr = lst;
+	while (ptr != NULL)
+	{
+		printf("%d --> ", ptr->data);
+		ptr = ptr->next;
+	}
+	printf("NULL\n");
+}
 
 int	main(int ac, char *av[])
 {
@@ -115,7 +115,9 @@ int	main(int ac, char *av[])
 	head_a = init_stack(sp);
 	if (!ft_sorted(&head_a))
 		helper_fct2(&head_a, sp);
+	ft_print_nodes(head_a);
 	check_algo(&head_a, &head_b, sort_array(arr, count_words_in_av(ac, av), sp));
+	ft_print_nodes(head_a);
 	// free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);

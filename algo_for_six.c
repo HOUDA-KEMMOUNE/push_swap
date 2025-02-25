@@ -54,7 +54,6 @@ int	*bubble_sort(int arr[], int arr_size)
 		j = 0;
 		i++;
 	}
-	printf("by\n");
 	return (arr);
 }
 

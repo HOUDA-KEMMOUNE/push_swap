@@ -12,15 +12,37 @@
 
 #include "push_swap.h"
 
-static int	*bubble_sort(int *arr, int arr_size)
+int	*sort_array(int *array, int ac, char **s)
+{
+	int	size;
+	int	j;
+	int	*r;
+	int	count;
+
+	size = ac - 1;
+	j = 0;
+	count = 0;
+	while (s[count])
+		count++;
+	array = malloc(count * sizeof(int));
+	if (!array)
+		return (0);
+	while (s[j])
+	{
+		array[j] = ft_atoi(s[j], s, NULL);
+		j++;
+	}
+	r = bubble_sort(array, size);
+	return (r);
+}
+
+int	*bubble_sort(int arr[], int arr_size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	if (!arr)
-		exit(1);
 	while (i < arr_size - 1)
 	{
 		while (j < arr_size - i - 1)
@@ -32,16 +54,9 @@ static int	*bubble_sort(int *arr, int arr_size)
 		j = 0;
 		i++;
 	}
+	printf("by\n");
 	return (arr);
 }
-
-// static void	incr_segment(int *start, int *end, int size)
-// {
-// 	if (*end < size - 1)
-// 		(*end)++;
-// 	if (*start < size - 2)
-// 		(*start)++;
-// }
 
 static void	phase_one(t_stack **head_a, t_stack **head_b,
 int *bub_sort, int arr_size)
@@ -83,18 +98,11 @@ static void	phase_two(t_stack **a, t_stack **b)
 		while (biggest->data != (*b)->data)
 		{
 			if (biggest->index <= ft_lstsize(*b) / 2)
-			{
 				rb(b);
-				write(1, "rb\n", 3);
-			}
 			else
-			{
 				rrb(b);
-				write(1, "rrb\n", 4);
-			}
 		}
 		pa(a, b);
-		write(1, "pa\n", 3);
 	}
 }
 

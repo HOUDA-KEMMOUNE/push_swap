@@ -27,8 +27,9 @@ void	is_sorted(t_stack **head_a)
 		exit(0);
 }
 
-void	check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
+void	check_algo(t_stack **head_a, t_stack **head_b, int *arr)
 {
+	printf("I enter\n");
 	int	size;
 
 	if (!head_a)
@@ -41,7 +42,8 @@ void	check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size)
 	else if (size == 4 || size == 5)
 		algo_for_four_five(head_a, head_b);
 	else if (size >= 6)
-		algo_for_six(head_a, head_b, arr, arr_size);
+		algo_for_six(head_a, head_b, arr, size);
 	else
 		return ;
+	free(arr);
 }

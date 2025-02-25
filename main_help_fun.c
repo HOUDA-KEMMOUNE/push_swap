@@ -14,88 +14,18 @@
 
 /*-------------join_split_arg----------------*/
 
-char	**join_split_arg(char **av)
+char	*join_args(int ac, char **av)
 {
 	int		i;
 	char	*join;
-	char	*tmp;
-	char	**new_av;
 
 	i = 1;
 	join = ft_strdup("");
-	while (av[i])
+	while (i < ac)
 	{
-		tmp = join;
-		if (i != 1)
-		{
-			join = ft_strjoin(tmp, " ");
-			free(tmp);
-			tmp = join;
-		}
-		join = ft_strjoin(tmp, av[i]);
-		free(tmp);
+		join = ft_strjoin(join, av[i]);
+		join = ft_strjoin(join, " ");
 		i++;
 	}
-	new_av = ft_split(join, ' ');
-	i = 0;
-	free(join);
-	return (new_av);
+	return (join);
 }
-/*-------------free_split----------------*/
-
-void	free_split(char **str_str)
-{
-	int	i;
-
-	if (!str_str)
-		return ;
-	i = 0;
-	while (str_str[i])
-	{
-		free(str_str[i]);
-		i++;
-	}
-	free(str_str);
-}
-
-/*-------------atoi_av---------------*/
-int	help_atoi_av(char **new_av)
-{
-	int	count;
-
-	count = 0;
-	while (new_av[count])
-		count++;
-	check_if_dup(new_av, count);
-	return (count);
-}
-
-int	*atoi_av(char *av[])
-{
-	char	**new_av;
-	int		*arr;
-	int		i;
-	int		count;
-
-	new_av = join_split_arg(av);
-	if (new_av != NULL)
-	{
-		count = help_atoi_av(new_av);
-		arr = malloc((count) * sizeof(int));
-		if (!arr)
-		{
-			free_split(new_av);
-			return (NULL);
-		}
-		i = 0;
-		while (new_av[i] && i < count)
-		{
-			arr[i] = ft_atoi(new_av[i]);
-			i++;
-		}
-		free_split(new_av);
-		return (arr);
-	}
-	return (NULL);
-}
-/*-------------end----------------*/

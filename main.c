@@ -60,26 +60,64 @@ int	count_words_in_av(int ac, char **av)
 	return (total_words);
 }
 
+static int	ft_sorted(t_stack **a)
+{
+	t_stack	*tmp;
+
+	tmp = *a;
+	while (tmp && tmp->next && tmp->data < tmp->next->data)
+	{
+		tmp = tmp->next;
+	}
+	if (tmp->next == NULL)
+		return (0);
+	return (1);
+}
+
+static void	helper_fct2(t_stack **a, char **sp)
+{
+	ft_lstclear(a);
+	free_split(sp);
+	exit(0);
+}
+// static void ft_print_nodes(t_stack *lst)
+// {
+// 	t_stack *ptr;
+
+// 	ptr = lst;
+// 	while (ptr != NULL)
+// 	{
+// 		printf("%d --> ", ptr->data);
+// 		ptr = ptr->next;
+// 	}
+// 	printf("NULL\n");
+// }
+
 int	main(int ac, char *av[])
 {
 	t_stack	*head_a;
 	t_stack	*head_b;
+	char	**sp;
+	char	*join;
 	int		*arr;
-	int		arr_size;
+	// int		*new_arr;
 
 	if (ac == 1)
 		return (0);
-	check_errors(ac, av);
-	arr = atoi_av(av);
-	if (arr == NULL)
-		return (1);
-	arr_size = 0;
-	arr_size = count_words_in_av(ac, av);
-	head_a = ft_lstnew(arr[0]);
+	join = NULL;
+	sp = NULL;
+	arr = 0;
+	join = join_args(ac, av);
+	sp = ft_split(join, ' ');
+	free(join);
+	head_a = NULL;
 	head_b = NULL;
-	ft_stack_a(arr_size, arr, head_a);
-	check_algo(&head_a, &head_b, arr, arr_size);
-	free(arr);
+	head_a = init_stack(sp);
+	if (!ft_sorted(&head_a))
+		helper_fct2(&head_a, sp);
+	check_algo(&head_a, &head_b, sort_array(arr, count_words_in_av(ac, av), sp));
+	// free(arr);
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
+	ft_free(sp);
 }

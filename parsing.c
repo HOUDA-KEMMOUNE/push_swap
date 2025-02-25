@@ -39,35 +39,36 @@ int	empty_arg(int ac, char *av[])
 				break ;
 		}
 		if (av[i][j] == '\0')
-			print_error();
+		{
+			printf("empty_arg\n");
+			exit(1);
+		}
+			// print_error();
 		i++;
 	}
 	return (0);
 }
 
 /*-------------check_if_dup----------------*/
-int	check_if_dup(char **str, int count)
-{
-	int	i;
-	int	j;
-	int	first_num;
-	int	second_num;
 
-	i = 0;
-	while (i < count)
+int	check_dup(t_stack *a)
+{
+	t_stack	*check;
+	t_stack	*current;
+
+	current = a;
+	while (current)
 	{
-		first_num = ft_atoi(str[i]);
-		j = i + 1;
-		while (j < count)
+		check = current->next;
+		while (check)
 		{
-			second_num = ft_atoi(str[j]);
-			if (first_num == second_num)
-				print_error();
-			j++;
+			if (check->data == current->data)
+				return (0);
+			check = check->next;
 		}
-		i++;
+		current = current->next;
 	}
-	return (0);
+	return (1);
 }
 
 char	**ft_free_(char **res)

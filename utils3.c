@@ -14,20 +14,30 @@
 
 /*-------------------------ft_strjoin-------------------------*/
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*ptr;
-	int		total_len;
+	char	*new_str;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	j = 0;
 	if (!s1 || !s2)
+		return (0);
+	new_str = (char *)malloc((sizeof(char) * (ft_strlen((char *)s1)
+					+ ft_strlen((char *)s2) + 1)));
+	if (!new_str)
 		return (NULL);
-	total_len = ft_strlen(s1) + ft_strlen(s2) + 2;
-	ptr = (char *)malloc(total_len * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	ft_strlcpy(ptr, s1, ft_strlen(s1) + 1);
-	ft_strlcat(ptr, s2, ft_strlen(s1) + ft_strlen(s2) + 2);
-	return (ptr);
+	while (s1[i])
+	{
+		new_str[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+		new_str[i++] = s2[j++];
+	free(s1);
+	new_str[i] = '\0';
+	return (new_str);
 }
 /*-------------------------ft_strlcpy-------------------------*/
 
@@ -52,54 +62,43 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 }
 
 /*-------------------------ft_atoi--------------------------*/
-
-static int	check(const char *str, int i)
+static void	helper_fct1(char **av, t_stack **stack)
 {
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	return (i);
+	ft_free(av);
+	if (stack)
+		ft_lstclear(stack);
+	print_error();
 }
 
-int	ft_atoi(const char *str)
+
+int	ft_atoi(const char *str, char **av, t_stack **stack)
 {
 	int			i;
-	int			sign;
 	long long	result;
-	int			j;
-	size_t		len;
+	int			sign;
 
 	i = 0;
-	sign = 1;
 	result = 0;
-	i = check(str, i);
+	sign = 1;
+	if (!str)
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = -1;
+			sign = -sign;
 		i++;
 	}
-	len = ft_strlen(str);
-	j = 0;
-	if (len > 12)
+	while (str[i] != '\0')
 	{
-		while (str[j] && j < 12)
+		result = result * 10 + (str[i++] - 48);
+		if ((sign == 1 && result > INT_MAX) || (sign == -1
+				&& (-result) < INT_MIN))
 		{
-			if (str[j] == '9')
-				j++;
-			else
-				break ;
-			print_error();
+			helper_fct1(av, stack);
 		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	result = result * sign;
-	if (result < INT_MIN || result > INT_MAX)
-		print_error();
-	return (result);
+	return (sign * result);
 }
+
 
 /*---------------------------end-----------------------*/

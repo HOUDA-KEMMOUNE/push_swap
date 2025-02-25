@@ -13,88 +13,126 @@
 #include "push_swap.h"
 
 /*-------------------------ft_split-------------------------*/
-
-static int	word_count(const char *s, char c)
+static int	ft_lenword(const char *s, char c)
 {
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-		{
-			count++;
-			while (s[i] != c && s[i])
-				i++;
-		}
-	}
-	return (count);
-}
-
-static char	**ft_free(char **res, int j)
-{
-	if (j == 0)
-		free (res[j]);
-	else
-	{
-		while (j >= 0)
-		{
-			free (res[j]);
-			j--;
-		}
-	}
-	free (res);
-	return (NULL);
-}
-
-static char	**fill(const char *str, char c, char **res)
-{
-	int	start;
 	int	i;
 	int	j;
 
+	j = 0;
+	i = 0;
+	while (s[i] && s[i] == c)
+	{
+		i++;
+	}
+	while (s[i] && s[i] != c)
+	{
+		j++;
+		i++;
+	}
+	return (j);
+}
+
+static int	count_word(const char *s, char c)
+{
+	int	i;
+	int	check;
+	int	wc;
+
+	wc = 0;
+	i = 0;
+	check = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			check = 0;
+		else if (check == 0)
+		{
+			check = 1;
+			wc++;
+		}
+		i++;
+	}
+	return (wc);
+}
+
+static char	*mystrdup(const char *s, char c)
+{
+	char	*array;
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	j = 0;
-	while (str[i])
+	array = malloc(sizeof(char) * ft_lenword(s, c) + 1);
+	if (!array)
+		return (NULL);
+	while (s[i] && s[i] == c)
 	{
-		while (str[i] == c)
-			i++;
-		if (str[i] == '\0')
-			break ;
-		start = i;
-		while (str[i] != c && str[i])
-			i++;
-		res[j] = malloc(sizeof(char) * (i - start + 1));
-		if (!res[j])
-			return (ft_free(res, j - 1));
-		ft_strlcpy(res[j], str + start, i - start + 1);
+		i++;
+	}
+	while (s[i] && s[i] != c)
+	{
+		array[j] = s[i];
+		i++;
 		j++;
 	}
-	res[j] = NULL;
-	return (res);
+	array[j] = '\0';
+	return (array);
 }
 
-char	**ft_split(const char *str, char c)
+void	ft_free(char **s)
 {
-	char	**res;
-	int		count;
+	int	i;
 
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
+	str = (char **)malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	count = word_count(str, c);
-	res = malloc(sizeof(char *) * (count + 1));
-	if (!res)
-		return (NULL);
-	if (count == 0)
+	while (s[i])
 	{
-		res[0] = NULL;
-		return (res);
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != c && s[i])
+		{
+			str[j] = mystrdup(s + i, c);
+			if (str[j++] == NULL)
+				ft_free(str);
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
-	return (fill(str, c, res));
+	return (str[j] = NULL, str);
 }
 
-/*---------------------------end-----------------------*/
+void	free_split(char **str_str)
+{
+	int	i;
+
+	if (!str_str)
+		return ;
+	i = 0;
+	while (str_str[i])
+	{
+		free(str_str[i]);
+		i++;
+	}
+	free(str_str);
+}

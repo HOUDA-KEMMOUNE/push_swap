@@ -28,19 +28,19 @@ typedef struct s_stack
 
 char	**ft_free_(char **res);
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, char **av, t_stack **stack);
 char	**ft_split(const char *str, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 int		check_if_nbr(char **av, int ac);
-char	**join_split_arg(char **av);
+char	*join_args(int ac, char **av);
 void	free_split(char **str_str);
-int		*atoi_av(char *av[]);
-int		check_if_dup(char **str, int count);
+void	ft_free(char **s);
+int		check_dup(t_stack *a);
 int		ft_strcmp(const char *s1, const char *s2);
 void	ft_swap(int *a, int *b);
 void	check_errors(int ac, char *av[]);
@@ -58,11 +58,14 @@ t_stack	*ft_lstnew(int content);
 void	ft_lstclear(t_stack **lst);
 int		check_big_num(t_stack *head);
 int		check_small_num(t_stack *head);
-void	ft_stack_a(int arr_size, int* arr, t_stack *head_a);
+// void	ft_stack_a(int arr_size, int* arr, t_stack *head_a);
+t_stack	*init_stack(char **av);
 t_stack	*big_node(t_stack *lst);
 int		ft_end(int arr_size);
 void	init_index(t_stack *lst);
 void	incr_segment(int *start, int *end, int size);
+int	*sort_array(int *array, int ac, char **s);
+int	*bubble_sort(int arr[], int arr_size);
 //-----------------actions-------------
 void		sa(t_stack **head);
 void		sb(t_stack **head_b);
@@ -76,7 +79,7 @@ void		rra(t_stack **head_a);
 void		rrb(t_stack **head_b);
 void		rrr(t_stack **head_a, t_stack **head_b);
 //------------------algos-----------------
-void		check_algo(t_stack **head_a, t_stack **head_b, int *arr, int arr_size);
+void	check_algo(t_stack **head_a, t_stack **head_b, int *arr);
 void		algo_for_two(t_stack **head_a);
 void		algo_for_three(t_stack **head_a);
 void		algo_for_four_five(t_stack **head_a, t_stack **head_b);

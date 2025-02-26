@@ -20,10 +20,7 @@ void	algo_for_two(t_stack **head_a)
 		return ;
 	ptr_a = *head_a;
 	if (ptr_a-> data > ptr_a->next->data)
-	{
 		sa(head_a);
-		write(1, "sa\n", 3);
-	}
 	else
 		return ;
 }
@@ -65,14 +62,10 @@ static void	size_for_four_five(t_stack **head_a, t_stack **head_b)
 		if ((*head_a)->data == min)
 		{
 			pb(head_a, head_b);
-			write(1, "pb\n", 3);
 			size--;
 		}
 		else
-		{
 			ra(head_a);
-			write(1, "ra\n", 3);
-		}
 	}
 }
 

@@ -29,7 +29,6 @@ void	is_sorted(t_stack **head_a)
 
 void	check_algo(t_stack **head_a, t_stack **head_b, int *arr)
 {
-	printf("I enter\n");
 	int	size;
 
 	if (!head_a)

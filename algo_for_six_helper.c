@@ -36,6 +36,7 @@ void	init_index(t_stack *lst)
 		i++;
 	}
 }
+
 t_stack	*big_node(t_stack *lst)
 {
 	t_stack	*max;

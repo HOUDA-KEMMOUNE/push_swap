@@ -39,11 +39,7 @@ int	empty_arg(int ac, char *av[])
 				break ;
 		}
 		if (av[i][j] == '\0')
-		{
-			printf("empty_arg\n");
-			exit(1);
-		}
-			// print_error();
+			print_error();
 		i++;
 	}
 	return (0);
@@ -71,17 +67,17 @@ int	check_dup(t_stack *a)
 	return (1);
 }
 
-char	**ft_free_(char **res)
-{
-	int	i;
+// char	**ft_free_(char **res)
+// {
+// 	int	i;
 
-	i = 0;
-	while (res[i])
-	{
-		free (res[i]);
-		i++;
-	}
-	free (res);
-	return (NULL);
-}
+// 	i = 0;
+// 	while (res[i])
+// 	{
+// 		free (res[i]);
+// 		i++;
+// 	}
+// 	free (res);
+// 	return (NULL);
+// }
 /*-------------------end--------------------*/

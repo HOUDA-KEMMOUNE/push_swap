@@ -80,19 +80,6 @@ static char	*mystrdup(const char *s, char c)
 	return (array);
 }
 
-void	ft_free(char **s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		free(s[i]);
-		i++;
-	}
-	free(s);
-}
-
 char	**ft_split(const char *s, char c)
 {
 	char	**str;

@@ -29,3 +29,15 @@ char	*join_args(int ac, char **av)
 	}
 	return (join);
 }
+
+void	print_error(void)
+{
+	write(1, "Error\n", 6);
+	exit (1);
+}
+
+void	check_errors(int ac, char *av[])
+{
+	check_if_nbr(av, ac);
+	empty_arg(ac, av);
+}

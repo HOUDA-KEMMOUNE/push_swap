@@ -12,18 +12,6 @@
 
 #include "push_swap.h"
 
-void	print_error(void)
-{
-	write(1, "Error\n", 6);
-	exit (1);
-}
-
-void	check_errors(int ac, char *av[])
-{
-	check_if_nbr(av, ac);
-	empty_arg(ac, av);
-}
-
 static int	count_words(char *str)
 {
 	int	count;
@@ -80,18 +68,6 @@ static void	helper_fct2(t_stack **a, char **sp)
 	free_split(sp);
 	exit(0);
 }
-static void ft_print_nodes(t_stack *lst)
-{
-	t_stack *ptr;
-
-	ptr = lst;
-	while (ptr != NULL)
-	{
-		printf("%d --> ", ptr->data);
-		ptr = ptr->next;
-	}
-	printf("NULL\n");
-}
 
 int	main(int ac, char *av[])
 {
@@ -100,7 +76,6 @@ int	main(int ac, char *av[])
 	char	**sp;
 	char	*join;
 	int		*arr;
-	// int		*new_arr;
 
 	if (ac == 1)
 		return (0);
@@ -115,10 +90,8 @@ int	main(int ac, char *av[])
 	head_a = init_stack(sp);
 	if (!ft_sorted(&head_a))
 		helper_fct2(&head_a, sp);
-	ft_print_nodes(head_a);
-	check_algo(&head_a, &head_b, sort_array(arr, count_words_in_av(ac, av), sp));
-	ft_print_nodes(head_a);
-	// free(arr);
+	check_algo(&head_a, &head_b,
+		sort_array(arr, count_words_in_av(ac, av), sp));
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
 	ft_free(sp);

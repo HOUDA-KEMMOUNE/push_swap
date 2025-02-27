@@ -12,20 +12,7 @@
 
 #include "push_swap.h"
 
-// void	ft_stack_a(int arr_size, int* arr, t_stack *head_a)
-// {
-// 	int		i;
-
-// 	i = 1;
-// 	while (i < arr_size)
-// 	{
-// 		add_node(head_a, arr[i]);
-// 		i++;
-// 	}
-// 	// free(arr);
-// }
-
-t_stack	*init_stack(char **av)
+t_stack	*init_stack(char **str)
 {
 	int		data;
 	t_stack	*new;
@@ -34,9 +21,9 @@ t_stack	*init_stack(char **av)
 
 	j = 0;
 	stack = NULL;
-	while (av[j])
+	while (str[j])
 	{
-		data = ft_atoi(av[j], av, &stack);
+		data = ft_atoi(str[j], str, &stack);
 		new = ft_lstnew(data);
 		if (!new)
 			exit(1);
@@ -46,7 +33,7 @@ t_stack	*init_stack(char **av)
 	if (check_dup(stack) == 0)
 	{
 		ft_lstclear(&stack);
-		ft_free(av);
+		ft_free(str);
 		print_error();
 	}
 	return (stack);

@@ -81,12 +81,12 @@ int	main(int ac, char *av[])
 		return (0);
 	join = NULL;
 	sp = NULL;
+	head_a = NULL;
+	head_b = NULL;
 	arr = 0;
 	join = join_args(ac, av);
 	sp = ft_split(join, ' ');
 	free(join);
-	head_a = NULL;
-	head_b = NULL;
 	head_a = init_stack(sp);
 	if (!ft_sorted(&head_a))
 		helper_fct2(&head_a, sp);

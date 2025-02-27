@@ -49,7 +49,7 @@ static void	helper_fct1(char **av, t_stack **stack)
 	print_error();
 }
 
-int	ft_atoi(const char *str, char **av, t_stack **stack)
+int	ft_atoi(const char *str, char **arr_str, t_stack **stack)
 {
 	int			i;
 	long long	result;
@@ -68,11 +68,11 @@ int	ft_atoi(const char *str, char **av, t_stack **stack)
 	}
 	while (str[i] != '\0')
 	{
-		result = result * 10 + (str[i++] - 48);
+		result = result * 10 + (str[i++] - '0');
 		if ((sign == 1 && result > INT_MAX) || (sign == -1
 				&& (-result) < INT_MIN))
 		{
-			helper_fct1(av, stack);
+			helper_fct1(arr_str, stack);
 		}
 	}
 	return (sign * result);

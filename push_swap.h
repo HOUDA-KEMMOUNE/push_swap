@@ -26,7 +26,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-int		ft_atoi(const char *str, char **av, t_stack **stack);
+int		ft_atoi(const char *str, char **arr_str, t_stack **stack);
 char	**ft_split(const char *str, char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
@@ -53,7 +53,7 @@ t_stack	*ft_lstnew(int content);
 void	ft_lstclear(t_stack **lst);
 int		check_big_num(t_stack *head);
 int		check_small_num(t_stack *head);
-t_stack	*init_stack(char **av);
+t_stack	*init_stack(char **str);
 t_stack	*big_node(t_stack *lst);
 int		ft_end(int arr_size);
 void	init_index(t_stack *lst);

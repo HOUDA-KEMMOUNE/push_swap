@@ -79,6 +79,7 @@ int	main(int ac, char *av[])
 
 	if (ac == 1)
 		return (0);
+	check_errors(ac, av);
 	join = NULL;
 	sp = NULL;
 	head_a = NULL;

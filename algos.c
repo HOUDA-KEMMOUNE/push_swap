@@ -59,6 +59,12 @@ static void	size_for_four_five(t_stack **head_a, t_stack **head_b)
 	while ((size > 3))
 	{
 		min = check_small_num(*head_a);
+		if (((size == 4) && ((*head_a)->next->next->next->data == min))
+			|| ((size == 5)
+				&& ((*head_a)->next->next->next->next->data == min)))
+			rra(head_a);
+		if ((*head_a)->next->data == min)
+			sa(head_a);
 		if ((*head_a)->data == min)
 		{
 			pb(head_a, head_b);

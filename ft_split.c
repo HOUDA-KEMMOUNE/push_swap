@@ -80,6 +80,12 @@ static char	*mystrdup(const char *s, char c)
 	return (array);
 }
 
+static char	**return_after_free(char **str)
+{
+	ft_free(str);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**str;
@@ -101,25 +107,10 @@ char	**ft_split(const char *s, char c)
 		{
 			str[j] = mystrdup(s + i, c);
 			if (str[j++] == NULL)
-				ft_free(str);
+				return_after_free(str);
 			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	return (str[j] = NULL, str);
-}
-
-void	free_split(char **str_str)
-{
-	int	i;
-
-	if (!str_str)
-		return ;
-	i = 0;
-	while (str_str[i])
-	{
-		free(str_str[i]);
-		i++;
-	}
-	free(str_str);
 }

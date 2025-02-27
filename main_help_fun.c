@@ -41,3 +41,18 @@ void	check_errors(int ac, char *av[])
 	check_if_nbr(av, ac);
 	empty_arg(ac, av);
 }
+
+void	free_split(char **str_str)
+{
+	int	i;
+
+	if (!str_str)
+		return ;
+	i = 0;
+	while (str_str[i])
+	{
+		free(str_str[i]);
+		i++;
+	}
+	free(str_str);
+}

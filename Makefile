@@ -10,15 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
-
-EXE = push_swap
-
-# ARCH = libft/libft.a
+NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_split.c main.c stacks.c swaps.c utils3.c main_help_fun.c pushes.c stack_helper.c \
 	utils2.c utils4.c node_help_fun.c rerotates.c algos.c check_algo.c node_help_fun_2.c \
@@ -26,21 +22,18 @@ SRC = ft_split.c main.c stacks.c swaps.c utils3.c main_help_fun.c pushes.c stack
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME) $(EXE)
+all: $(NAME)
 
 %.o: %.c
 	@cc -c $(CFLAGS) $< -o $@
 
 $(NAME): $(OBJ)
-	ar -rcs $@ $(OBJ)
-
-$(EXE): $(SRC)
-	$(CC) $(SRC) $(CFLAGS) -o $(EXE)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME) $(EXE)
+	rm -rf $(NAME)
 
 re: fclean all

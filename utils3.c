@@ -77,5 +77,4 @@ int	ft_atoi(const char *str, char **arr_str, t_stack **stack)
 	}
 	return (sign * result);
 }
-
 /*---------------------------end-----------------------*/

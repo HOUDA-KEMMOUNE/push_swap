@@ -41,9 +41,9 @@ char	*ft_strjoin(char *s1, char *s2)
 }
 
 /*-------------------------ft_atoi--------------------------*/
-static void	helper_fct1(char **av, t_stack **stack)
+static void	helper_fct1(char **arr_str, t_stack **stack)
 {
-	ft_free(av);
+	ft_free(arr_str);
 	if (stack)
 		ft_lstclear(stack);
 	print_error();

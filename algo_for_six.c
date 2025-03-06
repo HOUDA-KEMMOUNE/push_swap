@@ -87,21 +87,21 @@ int *bub_sort, int arr_size)
 	}
 }
 
-static void	phase_two(t_stack **a, t_stack **b)
+static void	phase_two(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*biggest;
 
-	while (*b)
+	while (*head_b)
 	{
-		biggest = big_node(*b);
-		while (biggest->data != (*b)->data)
+		biggest = big_node(*head_b);
+		while (biggest->data != (*head_b)->data)
 		{
-			if (biggest->index <= ft_lstsize(*b) / 2)
-				rb(b);
+			if (biggest->index <= ft_lstsize(*head_b) / 2)
+				rb(head_b);
 			else
-				rrb(b);
+				rrb(head_b);
 		}
-		pa(a, b);
+		pa(head_a, head_b);
 	}
 }
 
